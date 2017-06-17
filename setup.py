@@ -11,5 +11,5 @@ setup(
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/chinese-calendar',
     license='WTFPL',
-    packages=['chinese_calendar'],
+    packages=[b'chinese_calendar'],
 )
