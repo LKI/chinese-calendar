@@ -9,6 +9,6 @@ setup(
     author='Lirian Su',
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/chinese-calendar',
-    license='WTFPL',
+    license='MIT License',
     packages=['chinese_calendar'],
 )
