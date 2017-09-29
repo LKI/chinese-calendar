@@ -59,4 +59,5 @@ workdays = {
     datetime.date(year=2017, month=2, day=4): Holiday.spring_festival,
     datetime.date(year=2017, month=4, day=1): Holiday.tomb_sweeping_day,
     datetime.date(year=2017, month=5, day=27): Holiday.dragon_boat_festival,
+    datetime.date(year=2017, month=9, day=30): Holiday.mid_autumn_festival,
 }
