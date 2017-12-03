@@ -1,10 +1,10 @@
 # Chinese Calendar
 
 [![Package](https://img.shields.io/pypi/v/chinesecalendar.svg)](https://pypi.python.org/pypi/chinesecalendar)
-[![Travis](https://img.shields.io/travis/LKI/chinesecalendar.svg)](https://travis-ci.org/LKI/chinesecalendar)
-[![Codecov](https://img.shields.io/codecov/c/github/LKI/chinesecalendar.svg)](http://codecov.io/github/LKI/chinesecalendar?branch=master)
-[![License](https://img.shields.io/github/license/LKI/chinesecalendar.svg)](https://github.com/LKI/chinesecalendar/blob/master/LICENSE)
-[![README](https://img.shields.io/badge/简介-中文-brightgreen.svg)](https://github.com/LKI/chinesecalendar/blob/master/README.md)
+[![Travis](https://img.shields.io/travis/LKI/chinese-calendar.svg)](https://travis-ci.org/LKI/chinese-calendar)
+[![Codecov](https://img.shields.io/codecov/c/github/LKI/chinese-calendar.svg)](http://codecov.io/github/LKI/chinese-calendar?branch=master)
+[![License](https://img.shields.io/github/license/LKI/chinese-calendar.svg)](https://github.com/LKI/chinese-calendar/blob/master/LICENSE)
+[![README](https://img.shields.io/badge/简介-中文-brightgreen.svg)](https://github.com/LKI/chinese-calendar/blob/master/README.md)
 
 Check if some date is workday or holiday in China.
 Support 2016 ~ 2017 currently.
