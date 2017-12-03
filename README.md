@@ -2,7 +2,6 @@
 
 [![Package](https://img.shields.io/pypi/v/chinesecalendar.svg)](https://pypi.python.org/pypi/chinesecalendar)
 [![Travis](https://img.shields.io/travis/LKI/chinese-calendar.svg)](https://travis-ci.org/LKI/chinese-calendar)
-[![Codecov](https://img.shields.io/codecov/c/github/LKI/chinese-calendar.svg)](http://codecov.io/github/LKI/chinese-calendar?branch=master)
 [![License](https://img.shields.io/github/license/LKI/chinese-calendar.svg)](https://github.com/LKI/chinese-calendar/blob/master/LICENSE)
 [![README](https://img.shields.io/badge/README-English-brightgreen.svg)](https://github.com/LKI/chinese-calendar/blob/master/README.en.md)
 
