@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='chinesecalendar',
-    version='0.0.3',
+    version='0.0.4',
     description='check if some day is holiday in China',
     author='Lirian Su',
     author_email='liriansu@gmail.com',
