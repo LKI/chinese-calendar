@@ -1,4 +1,7 @@
-bumpversion==0.5.3
-pytest-cov==2.5.1
-twine==1.9.1
-wheel==0.30.0
+-r test-requirements.txt
+
+bumpversion
+ipython
+pypandoc
+twine
+wheel

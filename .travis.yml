@@ -9,7 +9,7 @@ python:
   - "3.7-dev"
 
 install:
-  - pip install -r dev-requirements.txt
+  - pip install -r test-requirements.txt
 
 script:
   - pytest --cov=./
