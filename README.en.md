@@ -1,22 +1,22 @@
-# 中国节假日
+# Chinese Calendar
 
 [![Package](https://img.shields.io/pypi/v/chinesecalendar.svg)](https://pypi.python.org/pypi/chinesecalendar)
 [![Travis](https://img.shields.io/travis/LKI/chinesecalendar.svg)](https://travis-ci.org/LKI/chinesecalendar)
 [![Codecov](https://img.shields.io/codecov/c/github/LKI/chinesecalendar.svg)](http://codecov.io/github/LKI/chinesecalendar?branch=master)
 [![License](https://img.shields.io/github/license/LKI/chinesecalendar.svg)](https://github.com/LKI/chinesecalendar/blob/master/LICENSE)
-[![README](https://img.shields.io/badge/README-English-brightgreen.svg)](https://github.com/LKI/chinesecalendar/blob/master/README.en.md)
+[![README](https://img.shields.io/badge/简介-中文-brightgreen.svg)](https://github.com/LKI/chinesecalendar/blob/master/README.md)
 
-判断某年某月某一天是不是工作日/节假日。
-目前支持 2016 年至 2017年。
-兼容 Python2 与 Python3.
+Check if some date is workday or holiday in China.
+Support 2016 ~ 2017 currently.
+Available in Python2 and Python3.
 
-## 安装
+## Installation
 
 ```
-pip install chinese calendar
+pip install chinesecalendar
 ```
 
-## 样例
+## Sample
 
 ``` python
 import datetime
