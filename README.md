@@ -12,7 +12,7 @@
 ## 安装
 
 ```
-pip install chinese calendar
+pip install chinesecalendar
 ```
 
 ## 样例
