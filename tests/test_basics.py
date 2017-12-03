@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import datetime
 from unittest import TestCase
 
-from utils import is_holiday, is_workday
+from chinese_calendar.utils import is_holiday, is_workday
 
 
 class BasicTests(TestCase):

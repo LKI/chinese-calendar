@@ -1,11 +1,13 @@
-*.pyc
 .DS_Store
-*.egg-info/
-
+.coverage
 MANIFEST
 
-/.idea/
-/env/
-/dist/
-/build/
+*.pyc
 
+/.cache/
+/.idea/
+/build/
+/dist/
+/env/
+
+*.egg-info/
