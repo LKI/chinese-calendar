@@ -57,7 +57,6 @@ holidays = {
     datetime.date(year=2018, month=4, day=6): Holiday.tomb_sweeping_day,
     datetime.date(year=2018, month=4, day=7): Holiday.tomb_sweeping_day,
     datetime.date(year=2018, month=4, day=29): Holiday.labour_day,
-    datetime.date(year=2018, month=4, day=29): Holiday.labour_day,
     datetime.date(year=2018, month=4, day=30): Holiday.labour_day,
     datetime.date(year=2018, month=5, day=1): Holiday.labour_day,
     datetime.date(year=2018, month=6, day=18): Holiday.dragon_boat_festival,
