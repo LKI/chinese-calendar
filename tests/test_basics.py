@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import datetime
 from unittest import TestCase
 
-from chinese_calendar.utils import is_holiday, is_workday
+from chinese_calendar import Holiday, get_holiday_detail, is_holiday, is_workday
 
 
 class BasicTests(TestCase):
@@ -33,6 +33,16 @@ class BasicTests(TestCase):
         for date in dates:
             self.assertFalse(is_holiday(date))
             self.assertTrue(is_workday(date))
+
+    def test_detail(self):
+        cases = [
+            ((2018, 2, 10), (True, None)),
+            ((2018, 2, 11), (False, Holiday.spring_festival.value)),
+            ((2018, 2, 12), (False, None)),
+            ((2018, 2, 15), (True, Holiday.spring_festival.value)),
+        ]
+        for date, expected_result in cases:
+            self.assertEqual(expected_result, get_holiday_detail(datetime.date(*date)))
 
     def test_not_implemented(self):
         with self.assertRaises(NotImplementedError):
