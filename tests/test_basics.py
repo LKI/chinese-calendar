@@ -2,12 +2,12 @@
 from __future__ import absolute_import, unicode_literals
 
 import datetime
-from unittest import TestCase
+import unittest
 
 from chinese_calendar import Holiday, get_holiday_detail, is_holiday, is_workday
 
 
-class BasicTests(TestCase):
+class BasicTests(unittest.TestCase):
     def test_opposite(self):
         date = datetime.date.today()
         self.assertEqual(not is_workday(date), is_holiday(date))

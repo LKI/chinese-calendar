@@ -20,12 +20,16 @@ pip install chinesecalendar
 ``` python
 import datetime
 
-from chinese_calendar.utils import is_workday, is_holiday
+# 判断 2018年4月30号 是不是节假日
+from chinese_calendar import is_workday, is_holiday
+april_last = datetime.date(2018, 4, 30)
+self.assertFalse(is_workday(april_last))
+self.assertTrue(is_holiday(april_last))
 
-march_first = datetime.date(2017, 5, 1)
-
-print(is_workday(march_first))  # False
-
-print(is_holiday(march_first))  # True
+# 或者在判断的同时，获取节日名
+import chinese_calendar as calendar  # 也可以这样 import
+on_holiday, holiday_name = calendar.get_holiday_detail(april_last)
+self.assertTrue(on_holiday)
+self.assertEqual(calendar.Holiday.labour_day.value, holiday_name)
 ```
 
