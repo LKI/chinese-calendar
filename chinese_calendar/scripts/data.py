@@ -327,6 +327,14 @@ class Arrangement(object):
             .nd().rest(10, 1).to(10, 7).work(9, 30).work(10, 8) \
             .nyd().work(12, 30).to(12, 31)
 
+    # 注：2005年及以前的安排就很凌乱了（其实06/07两年也是叫“部分节假日安排”）
+    # 假如之后想要加的话可以参考以下地址：
+    # 2005: https://zh.wikisource.org/zh-hans/%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%8A%9E%E5%85%AC%E5%8E%85%E5%85%B3%E4%BA%8E2005%E5%B9%B4%E9%83%A8%E5%88%86%E8%8A%82%E5%81%87%E6%97%A5%E5%AE%89%E6%8E%92%E7%9A%84%E9%80%9A%E7%9F%A5
+    # 2004: https://zh.wikisource.org/zh-hans/%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%8A%9E%E5%85%AC%E5%8E%85%E5%85%B3%E4%BA%8E2004%E5%B9%B4%E9%83%A8%E5%88%86%E8%8A%82%E5%81%87%E6%97%A5%E5%AE%89%E6%8E%92%E7%9A%84%E9%80%9A%E7%9F%A5
+    # 2003: https://zh.wikisource.org/zh-hans/%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%8A%9E%E5%85%AC%E5%8E%85%E5%85%B3%E4%BA%8E2003%E5%B9%B4%E9%83%A8%E5%88%86%E8%8A%82%E5%81%87%E6%97%A5%E4%BC%91%E6%81%AF%E5%AE%89%E6%8E%92%E7%9A%84%E9%80%9A%E7%9F%A5
+    # 2002: https://zh.wikisource.org/zh-hans/%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%8A%9E%E5%85%AC%E5%8E%85%E5%85%B3%E4%BA%8E2002%E5%B9%B4%E9%83%A8%E5%88%86%E8%8A%82%E5%81%87%E6%97%A5%E4%BC%91%E6%81%AF%E5%AE%89%E6%8E%92%E7%9A%84%E9%80%9A%E7%9F%A5
+    # 2001: https://zh.wikisource.org/zh-hans/%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%8A%9E%E5%85%AC%E5%8E%85%E5%85%B3%E4%BA%8E2001%E5%B9%B4%E6%98%A5%E8%8A%82%E3%80%81%E2%80%9C%E4%BA%94%E4%B8%80%E2%80%9D%E3%80%81%E2%80%9C%E5%8D%81%E4%B8%80%E2%80%9D%E6%94%BE%E5%81%87%E5%AE%89%E6%8E%92%E7%9A%84%E9%80%9A%E7%9F%A5
+
     def year_at(self, number):
         self.year = number
         return self
