@@ -14,13 +14,17 @@ def _get_lines(days):
     yield '}'
 
 
+def get_constants_file_path():
+    return join(dirname(dirname(realpath(__file__))), 'constants.py')
+
+
 def generate_constants():
     arrangement = Arrangement()
     file_content = constants_template.format(
         '\n'.join(_get_lines(arrangement.holidays)),
         '\n'.join(_get_lines(arrangement.workdays)),
     )
-    file_path = join(dirname(dirname(realpath(__file__))), 'constants.py')
+    file_path = get_constants_file_path()
     with open(file_path, 'wb') as f:
         f.write(file_content.encode('utf-8'))
 
