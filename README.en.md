@@ -33,3 +33,9 @@ self.assertTrue(on_holiday)
 self.assertEqual(calendar.Holiday.labour_day.value, holiday_name)
 ```
 
+## Other Languages
+
+If you fail to use Python directly,
+you can translate the [constants file][constants.py] to get the complete chinese holiday arrangement.
+
+[constants.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/constants.py
