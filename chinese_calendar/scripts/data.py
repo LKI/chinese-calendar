@@ -164,7 +164,7 @@ class Arrangement(object):
             .sf().rest(2, 9).to(2, 15).work(2, 16).work(2, 17) \
             .tsd().rest(4, 4).to(4, 6).work(4, 7) \
             .ld().rest(4, 29).to(5, 1).work(4, 27).work(4, 28) \
-            .dbf().rest(6, 10).rest(6, 12).work(6, 8).work(6, 9) \
+            .dbf().rest(6, 10).to(6, 12).work(6, 8).work(6, 9) \
             .maf().rest(9, 19).to(9, 21).work(9, 22) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).work(10, 12)
 
@@ -225,7 +225,7 @@ class Arrangement(object):
             .sf().rest(2, 13).to(2, 19).work(2, 20).work(2, 21) \
             .tsd().rest(4, 3).to(4, 5) \
             .ld().rest(5, 1).to(5, 3) \
-            .dbf().rest(6, 14).rest(6, 16).work(6, 12).work(6, 13) \
+            .dbf().rest(6, 14).to(6, 16).work(6, 12).work(6, 13) \
             .maf().rest(9, 22).to(9, 24).work(9, 19).work(9, 25) \
             .nd().rest(10, 1).to(10, 7).work(9, 26).work(10, 9)
 
@@ -255,7 +255,7 @@ class Arrangement(object):
             .sf().rest(1, 25).to(1, 31).work(1, 24).work(2, 1) \
             .tsd().rest(4, 4).to(4, 6) \
             .ld().rest(5, 1).to(5, 3) \
-            .dbf().rest(5, 28).rest(5, 30).work(5, 31) \
+            .dbf().rest(5, 28).to(5, 30).work(5, 31) \
             .nd().rest(10, 1).to(10, 8).work(9, 27).work(10, 10) \
             .maf().rest(10, 3)  # 国庆中秋相连，经查证10月3日为中秋
 

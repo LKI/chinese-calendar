@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
+
+import unittest
+from collections import defaultdict
+
+from chinese_calendar.constants import holidays, workdays
+
+
+class HolidayAmountTests(unittest.TestCase):
+    def test_holiday_amount(self):
+        holiday_amounts = defaultdict(int)
+        for date in holidays.keys():
+            if date.weekday() <= 4:
+                holiday_amounts[date.year] += 1
+        for date in workdays.keys():
+            if date.weekday() > 4:
+                holiday_amounts[date.year] -= 1
+        holiday_amounts[2007] -= 2  # 07年法定节假日有13天（国庆多了两天）
+        holiday_amounts[2008] -= 2  # 08年同上
+        holiday_amounts[2011] += 1  # 11年要补班12年的元旦假期
+        holiday_amounts[2012] -= 1  # 12年可以享受11年补班的假
+        holiday_amounts[2014] += 1  # 14年的节假日安排莫名少了一天
+        for year in range(2007, 2018 + 1):  # 06年数据少，不测了
+            self.assertEqual(11, holiday_amounts[year])
+        self.assertEqual(1, 1)
