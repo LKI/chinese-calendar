@@ -25,6 +25,33 @@ class Holiday(Enum):
 
 
 holidays = {
+    datetime.date(year=2008, month=1, day=1): Holiday.new_years_day.value,
+    datetime.date(year=2008, month=2, day=6): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=7): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=8): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=9): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=10): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=11): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=12): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=4, day=4): Holiday.tomb_sweeping_day.value,
+    datetime.date(year=2008, month=4, day=5): Holiday.tomb_sweeping_day.value,
+    datetime.date(year=2008, month=4, day=6): Holiday.tomb_sweeping_day.value,
+    datetime.date(year=2008, month=5, day=1): Holiday.labour_day.value,
+    datetime.date(year=2008, month=5, day=2): Holiday.labour_day.value,
+    datetime.date(year=2008, month=5, day=3): Holiday.labour_day.value,
+    datetime.date(year=2008, month=6, day=7): Holiday.dragon_boat_festival.value,
+    datetime.date(year=2008, month=6, day=8): Holiday.dragon_boat_festival.value,
+    datetime.date(year=2008, month=6, day=9): Holiday.dragon_boat_festival.value,
+    datetime.date(year=2008, month=9, day=13): Holiday.mid_autumn_festival.value,
+    datetime.date(year=2008, month=9, day=14): Holiday.mid_autumn_festival.value,
+    datetime.date(year=2008, month=9, day=15): Holiday.mid_autumn_festival.value,
+    datetime.date(year=2008, month=9, day=29): Holiday.national_day.value,
+    datetime.date(year=2008, month=9, day=30): Holiday.national_day.value,
+    datetime.date(year=2008, month=10, day=1): Holiday.national_day.value,
+    datetime.date(year=2008, month=10, day=2): Holiday.national_day.value,
+    datetime.date(year=2008, month=10, day=3): Holiday.national_day.value,
+    datetime.date(year=2008, month=10, day=4): Holiday.national_day.value,
+    datetime.date(year=2008, month=10, day=5): Holiday.national_day.value,
     datetime.date(year=2009, month=1, day=1): Holiday.new_years_day.value,
     datetime.date(year=2009, month=1, day=2): Holiday.new_years_day.value,
     datetime.date(year=2009, month=1, day=3): Holiday.new_years_day.value,
@@ -279,6 +306,9 @@ holidays = {
 }
 
 workdays = {
+    datetime.date(year=2008, month=2, day=2): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=2, day=3): Holiday.spring_festival.value,
+    datetime.date(year=2008, month=5, day=4): Holiday.labour_day.value,
     datetime.date(year=2009, month=1, day=4): Holiday.new_years_day.value,
     datetime.date(year=2009, month=1, day=24): Holiday.spring_festival.value,
     datetime.date(year=2009, month=2, day=1): Holiday.spring_festival.value,
