@@ -25,6 +25,27 @@ class Holiday(Enum):
 
 
 holidays = {
+    datetime.date(year=2014, month=1, day=1): Holiday.new_years_day.value,
+    datetime.date(year=2014, month=1, day=31): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=1): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=2): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=3): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=4): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=5): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=6): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=4, day=5): Holiday.tomb_sweeping_day.value,
+    datetime.date(year=2014, month=5, day=1): Holiday.labour_day.value,
+    datetime.date(year=2014, month=5, day=2): Holiday.labour_day.value,
+    datetime.date(year=2014, month=5, day=3): Holiday.labour_day.value,
+    datetime.date(year=2014, month=6, day=2): Holiday.dragon_boat_festival.value,
+    datetime.date(year=2014, month=9, day=8): Holiday.mid_autumn_festival.value,
+    datetime.date(year=2014, month=10, day=1): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=2): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=3): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=4): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=5): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=6): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=7): Holiday.national_day.value,
     datetime.date(year=2015, month=1, day=1): Holiday.new_years_day.value,
     datetime.date(year=2015, month=1, day=2): Holiday.new_years_day.value,
     datetime.date(year=2015, month=1, day=3): Holiday.new_years_day.value,
@@ -122,6 +143,12 @@ holidays = {
 }
 
 workdays = {
+    datetime.date(year=2014, month=1, day=26): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=2, day=8): Holiday.spring_festival.value,
+    datetime.date(year=2014, month=4, day=7): Holiday.tomb_sweeping_day.value,
+    datetime.date(year=2014, month=5, day=4): Holiday.labour_day.value,
+    datetime.date(year=2014, month=9, day=28): Holiday.national_day.value,
+    datetime.date(year=2014, month=10, day=11): Holiday.national_day.value,
     datetime.date(year=2015, month=1, day=4): Holiday.new_years_day.value,
     datetime.date(year=2015, month=2, day=15): Holiday.spring_festival.value,
     datetime.date(year=2015, month=2, day=28): Holiday.spring_festival.value,
