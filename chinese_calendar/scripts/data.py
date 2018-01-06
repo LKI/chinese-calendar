@@ -130,6 +130,25 @@ class Arrangement(object):
             .maf().rest(9, 27) \
             .nd().rest(10, 1).to(10, 7).work(10, 10)
 
+    def _2014(self):
+        """ http://www.gov.cn/zwgk/2013-12/11/content_2546204.htm
+一、元旦：1月1日放假1天。
+二、春节：1月31日至2月6日放假调休，共7天。1月26日（星期日）、2月8日（星期六）上班。
+三、清明节：4月5日放假，4月7日（星期一）补休。
+四、劳动节：5月1日至3日放假调休，共3天。5月4日（星期日）上班。
+五、端午节：6月2日放假，与周末连休。
+六、中秋节：9月8日放假，与周末连休。
+七、国庆节：10月1日至7日放假调休，共7天。9月28日（星期日）、10月11日（星期六）上班。
+        """
+        self.year_at(2014) \
+            .nyd().rest(1, 1) \
+            .sf().rest(1, 31).to(2, 6).work(1, 26).work(2, 8) \
+            .tsd().rest(4, 5).work(4, 7) \
+            .ld().rest(5, 1).to(5, 3).work(5, 4) \
+            .dbf().rest(6, 2) \
+            .maf().rest(9, 8) \
+            .nd().rest(10, 1).to(10, 7).work(9, 28).work(10, 11)
+
     def year_at(self, number):
         self.year = number
         return self
