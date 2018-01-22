@@ -30,6 +30,9 @@ class Holiday(Enum):
     national_day = 'National Day', '国庆节', 3
     mid_autumn_festival = 'Mid-autumn Festival', '中秋', 1
 
+    # special holidays
+    anti_fascist_70th_day = 'Anti-Fascist 70th Day', '中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日', 1
+
 
 holidays = {}
 
@@ -120,6 +123,11 @@ class Arrangement(object):
 五、端午节：6月20日放假，6月22日（星期一）补休。
 六、中秋节：9月27日放假。
 七、国庆节：10月1日至7日放假调休，共7天。10月10日（星期六）上班。
+
+        注意：参见《国务院关于中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日调休放假的通知》
+        http://www.gov.cn/zhengce/content/2015-05/13/content_9742.htm
+        额外的放假安排如下：
+        9月3日至5日调休放假，共3天。其中9月3日（星期四）放假，9月4日（星期五）调休，9月6日（星期日）上班。
         """
         self.year_at(2015) \
             .nyd().rest(1, 1).to(1, 3).work(1, 4) \
@@ -128,7 +136,8 @@ class Arrangement(object):
             .ld().rest(5, 1) \
             .dbf().rest(6, 20).rest(6, 22) \
             .maf().rest(9, 27) \
-            .nd().rest(10, 1).to(10, 7).work(10, 10)
+            .nd().rest(10, 1).to(10, 7).work(10, 10) \
+            .afd().rest(9, 3).to(9, 4).work(9, 6)
 
     def _2014(self):
         """ http://www.gov.cn/zwgk/2013-12/11/content_2546204.htm
@@ -359,6 +368,9 @@ class Arrangement(object):
 
     def maf(self):
         return self.mark(chinese_calendar.Holiday.mid_autumn_festival)
+
+    def afd(self):
+        return self.mark(chinese_calendar.Holiday.anti_fascist_70th_day)
 
     def mark(self, holiday):
         self.holiday = holiday

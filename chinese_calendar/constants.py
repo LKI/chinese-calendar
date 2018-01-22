@@ -23,6 +23,9 @@ class Holiday(Enum):
     national_day = 'National Day', '国庆节', 3
     mid_autumn_festival = 'Mid-autumn Festival', '中秋', 1
 
+    # special holidays
+    anti_fascist_70th_day = 'Anti-Fascist 70th Day', '中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日', 1
+
 
 holidays = {
     datetime.date(year=2006, month=1, day=1): Holiday.new_years_day.value,
@@ -277,6 +280,8 @@ holidays = {
     datetime.date(year=2015, month=5, day=1): Holiday.labour_day.value,
     datetime.date(year=2015, month=6, day=20): Holiday.dragon_boat_festival.value,
     datetime.date(year=2015, month=6, day=22): Holiday.dragon_boat_festival.value,
+    datetime.date(year=2015, month=9, day=3): Holiday.anti_fascist_70th_day.value,
+    datetime.date(year=2015, month=9, day=4): Holiday.anti_fascist_70th_day.value,
     datetime.date(year=2015, month=9, day=27): Holiday.mid_autumn_festival.value,
     datetime.date(year=2015, month=10, day=1): Holiday.national_day.value,
     datetime.date(year=2015, month=10, day=2): Holiday.national_day.value,
@@ -423,6 +428,7 @@ workdays = {
     datetime.date(year=2015, month=1, day=4): Holiday.new_years_day.value,
     datetime.date(year=2015, month=2, day=15): Holiday.spring_festival.value,
     datetime.date(year=2015, month=2, day=28): Holiday.spring_festival.value,
+    datetime.date(year=2015, month=9, day=6): Holiday.anti_fascist_70th_day.value,
     datetime.date(year=2015, month=10, day=10): Holiday.national_day.value,
     datetime.date(year=2016, month=2, day=6): Holiday.spring_festival.value,
     datetime.date(year=2016, month=2, day=14): Holiday.spring_festival.value,
