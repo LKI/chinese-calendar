@@ -20,7 +20,6 @@ class HolidayAmountTests(unittest.TestCase):
         holiday_amounts[2008] -= 2  # 08年同上
         holiday_amounts[2011] += 1  # 11年要补班12年的元旦假期
         holiday_amounts[2012] -= 1  # 12年可以享受11年补班的假
-        holiday_amounts[2014] += 1  # 14年的节假日安排莫名少了一天
         holiday_amounts[2015] -= 1  # 15年是中国人民抗日战争暨世界反法西斯战争胜利70周年，多放1天
         for year in range(2007, 2018 + 1):  # 06年数据少，不测了
             self.assertEqual(11, holiday_amounts[year], 'Holiday amount of year {}'.format(year))
