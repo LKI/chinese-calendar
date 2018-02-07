@@ -152,7 +152,7 @@ class Arrangement(object):
         self.year_at(2014) \
             .nyd().rest(1, 1) \
             .sf().rest(1, 31).to(2, 6).work(1, 26).work(2, 8) \
-            .tsd().rest(4, 5).work(4, 7) \
+            .tsd().rest(4, 5).to(4, 7) \
             .ld().rest(5, 1).to(5, 3).work(5, 4) \
             .dbf().rest(6, 2) \
             .maf().rest(9, 8) \
