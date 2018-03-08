@@ -28,11 +28,9 @@ class Holiday(Enum):
 
 
 holidays = {
-    # 2005元旦节
     datetime.date(year=2005, month=1, day=1): Holiday.new_years_day.value,
     datetime.date(year=2005, month=1, day=2): Holiday.new_years_day.value,
     datetime.date(year=2005, month=1, day=3): Holiday.new_years_day.value,
-    # 2005春节
     datetime.date(year=2005, month=2, day=9): Holiday.spring_festival.value,
     datetime.date(year=2005, month=2, day=10): Holiday.spring_festival.value,
     datetime.date(year=2005, month=2, day=11): Holiday.spring_festival.value,
@@ -40,7 +38,6 @@ holidays = {
     datetime.date(year=2005, month=2, day=13): Holiday.spring_festival.value,
     datetime.date(year=2005, month=2, day=14): Holiday.spring_festival.value,
     datetime.date(year=2005, month=2, day=15): Holiday.spring_festival.value,
-    # 2005五一劳动节
     datetime.date(year=2005, month=5, day=1): Holiday.labour_day.value,
     datetime.date(year=2005, month=5, day=2): Holiday.labour_day.value,
     datetime.date(year=2005, month=5, day=3): Holiday.labour_day.value,
@@ -48,7 +45,6 @@ holidays = {
     datetime.date(year=2005, month=5, day=5): Holiday.labour_day.value,
     datetime.date(year=2005, month=5, day=6): Holiday.labour_day.value,
     datetime.date(year=2005, month=5, day=7): Holiday.labour_day.value,
-    # 2005十一国庆节
     datetime.date(year=2005, month=10, day=1): Holiday.national_day.value,
     datetime.date(year=2005, month=10, day=2): Holiday.national_day.value,
     datetime.date(year=2005, month=10, day=3): Holiday.national_day.value,
@@ -56,7 +52,6 @@ holidays = {
     datetime.date(year=2005, month=10, day=5): Holiday.national_day.value,
     datetime.date(year=2005, month=10, day=6): Holiday.national_day.value,
     datetime.date(year=2005, month=10, day=7): Holiday.national_day.value,
-    # 2006
     datetime.date(year=2006, month=1, day=1): Holiday.new_years_day.value,
     datetime.date(year=2006, month=1, day=2): Holiday.new_years_day.value,
     datetime.date(year=2006, month=1, day=3): Holiday.new_years_day.value,
@@ -395,15 +390,12 @@ holidays = {
 }
 
 workdays = {
-    # 2005年 春节
     datetime.date(year=2005, month=2, day=5): Holiday.spring_festival.value,
     datetime.date(year=2005, month=2, day=6): Holiday.spring_festival.value,
-    # 2005年 五一节
-    datetime.date(year=2005, month=4, day=30): Holiday.national_day.value,
-    datetime.date(year=2005, month=5, day=8): Holiday.national_day.value,
-    # 2005年 国庆节
-    datetime.date(year=2005, month=10, day=8): Holiday.labour_day.value,
-    datetime.date(year=2005, month=10, day=9): Holiday.labour_day.value,
+    datetime.date(year=2005, month=4, day=30): Holiday.labour_day.value,
+    datetime.date(year=2005, month=5, day=8): Holiday.labour_day.value,
+    datetime.date(year=2005, month=10, day=8): Holiday.national_day.value,
+    datetime.date(year=2005, month=10, day=9): Holiday.national_day.value,
     datetime.date(year=2006, month=1, day=28): Holiday.spring_festival.value,
     datetime.date(year=2006, month=2, day=5): Holiday.spring_festival.value,
     datetime.date(year=2006, month=4, day=29): Holiday.labour_day.value,
