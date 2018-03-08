@@ -38,4 +38,13 @@ self.assertEqual(calendar.Holiday.labour_day.value, holiday_name)
 假如你没法使用Python，
 你也可以转译现成的[常量文件][constants.py]来获取最全的节假日安排表。
 
+## 贡献代码
+
+1. Fork + Clone 项目到本地
+2. 修改[节假日定义][scripts/data.py]
+3. 执行[脚本][scripts/__init__.py]自动生成[常量文件][constants.py]
+4. 提交PR
+
 [constants.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/constants.py
+[scripts/data.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/data.py
+[scripts/__init__.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/__init__.py

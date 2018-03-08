@@ -38,4 +38,13 @@ self.assertEqual(calendar.Holiday.labour_day.value, holiday_name)
 If you fail to use Python directly,
 you can translate the [constants file][constants.py] to get the complete chinese holiday arrangement.
 
+## Contributing
+
+1. Fork & Clone this project
+2. Modify [calendar definition file][scripts/data.py]
+3. Run [script][scripts/__init__.py] to generate the [constants file][constants.py]
+4. Create a PR
+
 [constants.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/constants.py
+[scripts/data.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/data.py
+[scripts/__init__.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/__init__.py
