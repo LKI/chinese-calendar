@@ -355,7 +355,7 @@ class Arrangement(object):
         self.year_at(2005) \
             .nyd().rest(1, 1).to(1, 3) \
             .sf().rest(2, 9).to(2, 15).work(2, 5).work(2, 6) \
-            .ld().rest(5,1).to(5, 7).work(4, 30).work(5, 8) \
+            .ld().rest(5, 1).to(5, 7).work(4, 30).work(5, 8) \
             .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9)
 
     # 注：2005年及以前的安排就很凌乱了（其实06/07两年也是叫“部分节假日安排”）
