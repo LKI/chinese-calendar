@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-from os.path import dirname, join, realpath
+import os
 
 from chinese_calendar.scripts.data import Arrangement, constants_template
 
@@ -14,8 +14,9 @@ def _get_lines(days):
     yield '}'
 
 
-def get_constants_file_path():
-    return join(dirname(dirname(realpath(__file__))), 'constants.py')
+def _get_constants_file_path():
+    current_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    return os.path.join(current_path, 'constants.py')
 
 
 def generate_constants():
@@ -24,7 +25,7 @@ def generate_constants():
         '\n'.join(_get_lines(arrangement.holidays)),
         '\n'.join(_get_lines(arrangement.workdays)),
     )
-    file_path = get_constants_file_path()
+    file_path = _get_constants_file_path()
     with open(file_path, 'wb') as f:
         f.write(file_content.encode('utf-8'))
 

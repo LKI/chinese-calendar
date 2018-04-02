@@ -28,6 +28,28 @@ class Holiday(Enum):
 
 
 holidays = {
+    datetime.date(year=2004, month=1, day=1): Holiday.new_years_day.value,
+    datetime.date(year=2004, month=1, day=22): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=23): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=24): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=25): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=26): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=27): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=28): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=5, day=1): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=2): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=3): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=4): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=5): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=6): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=7): Holiday.labour_day.value,
+    datetime.date(year=2004, month=10, day=1): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=2): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=3): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=4): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=5): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=6): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=7): Holiday.national_day.value,
     datetime.date(year=2005, month=1, day=1): Holiday.new_years_day.value,
     datetime.date(year=2005, month=1, day=2): Holiday.new_years_day.value,
     datetime.date(year=2005, month=1, day=3): Holiday.new_years_day.value,
@@ -390,6 +412,12 @@ holidays = {
 }
 
 workdays = {
+    datetime.date(year=2004, month=1, day=17): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=1, day=18): Holiday.spring_festival.value,
+    datetime.date(year=2004, month=5, day=8): Holiday.labour_day.value,
+    datetime.date(year=2004, month=5, day=9): Holiday.labour_day.value,
+    datetime.date(year=2004, month=10, day=9): Holiday.national_day.value,
+    datetime.date(year=2004, month=10, day=10): Holiday.national_day.value,
     datetime.date(year=2005, month=2, day=5): Holiday.spring_festival.value,
     datetime.date(year=2005, month=2, day=6): Holiday.spring_festival.value,
     datetime.date(year=2005, month=4, day=30): Holiday.labour_day.value,
