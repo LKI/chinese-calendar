@@ -6,15 +6,28 @@ import datetime
 from chinese_calendar.constants import holidays, workdays
 
 
-def _validate_date(date):
+def _wrap_date(date):
     """
-    check if the date is supported
+    transform datetime.datetime into datetime.date
 
     :type date: datetime.date | datetime.datetime
-    :rtype: datetime.date | datetime.datetime
+    :rtype: datetime.date
     """
     if isinstance(date, datetime.datetime):
         date = date.date()
+    return date
+
+
+def _validate_date(*dates):
+    """
+    check if the date(s) is supported
+
+    :type date: datetime.date | datetime.datetime
+    :rtype: datetime.date | list[datetime.date]
+    """
+    if len(dates) != 1:
+        return list(map(_validate_date, dates))
+    date = _wrap_date(dates[0])
     if not isinstance(date, datetime.date):
         raise NotImplementedError('unsupported type {}, expected type is datetime.date'.format(type(date)))
     min_year, max_year = min(holidays.keys()).year, max(holidays.keys()).year
@@ -65,3 +78,66 @@ def get_holiday_detail(date):
         return True, holidays[date]
     else:
         return date.weekday() > 4, None
+
+
+def get_dates(start, end):
+    """
+    get dates between start date and end date. (includes start date and end date)
+
+    :type start: datetime.date | datetime.datetime
+    :type end:  datetime.date | datetime.datetime
+    :rtype: list[datetime.date]
+    """
+    start, end = map(_wrap_date, (start, end))
+    delta_days = (end - start).days
+    return [start + datetime.timedelta(days=delta) for delta in range(delta_days + 1)]
+
+
+def get_holidays(start, end, include_weekends=True):
+    """
+    get holidays between start date and end date. (includes start date and end date)
+
+    :type start: datetime.date | datetime.datetime
+    :type end:  datetime.date | datetime.datetime
+    :type include_weekends: bool
+    :param include_weekends: False for excluding Saturdays and Sundays
+    :rtype: list[datetime.date]
+    """
+    start, end = _validate_date(start, end)
+    if include_weekends:
+        return list(filter(is_holiday, get_dates(start, end)))
+    return list(filter(lambda x: x in holidays, get_dates(start, end)))
+
+
+def get_workdays(start, end):
+    """
+    get workdays between start date and end date. (includes start date and end date)
+
+    :type start: datetime.date | datetime.datetime
+    :type end:  datetime.date | datetime.datetime
+    :rtype: list[datetime.date]
+    """
+    start, end = _validate_date(start, end)
+    return list(filter(is_workday, get_dates(start, end)))
+
+
+def find_workday(delta_days=0, date=None):
+    """
+    find the workday after {delta_days} days.
+
+    :type delta_days: int
+    :param delta_days: 0 means next workday (includes today), -1 means previous workday.
+    :type date: datetime.date | datetime.datetime
+    :param: the start point
+    :rtype: datetime.date
+    """
+    date = _wrap_date(date or datetime.date.today())
+    if delta_days >= 0:
+        delta_days += 1
+    sign = 1 if delta_days >= 0 else -1
+    for i in range(abs(delta_days)):
+        if delta_days < 0 or i:
+            date += datetime.timedelta(days=sign)
+        while not is_workday(date):
+            date += datetime.timedelta(days=sign)
+    return date
