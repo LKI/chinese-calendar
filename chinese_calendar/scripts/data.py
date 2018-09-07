@@ -37,6 +37,8 @@ class Holiday(Enum):
 holidays = {}
 
 workdays = {}
+
+in_lieu_days = {}
 """
 
 
@@ -44,12 +46,14 @@ class Arrangement(object):
     def __init__(self):
         self.holidays = {}
         self.workdays = {}
+        self.in_lieu_days = {}
 
         self.year = None
         self.month = None
         self.day = None
         self.holiday = None
         self.is_working = None
+        self.is_in_lieu = None
 
         for method in dir(self):
             try:
@@ -433,12 +437,17 @@ class Arrangement(object):
     def rest(self, month, day):
         return self.save(month, day, is_working=False)
 
-    def save(self, month, day, is_working=True):
+    def in_lieu(self, month, day):
+        """ 调休 in lieu """
+        return self.save(month, day, is_in_lieu=True)
+
+    def save(self, month, day, is_working=True, is_in_lieu=False):
         if not self.year:
             raise ValueError('should set year before saving holiday')
         if not self.holiday:
             raise ValueError('should set holiday before saving holiday')
         self.is_working = is_working
+        self.is_in_lieu = is_in_lieu
         self.days[datetime.date(year=self.year, month=month, day=day)] = self.holiday
         self.month = month
         self.day = day
@@ -458,4 +467,8 @@ class Arrangement(object):
 
     @property
     def days(self):
-        return self.workdays if self.is_working else self.holidays
+        if self.is_working:
+            return self.workdays
+        if self.is_in_lieu:
+            return self.in_lieu_days
+        return self.holidays
