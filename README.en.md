@@ -31,6 +31,11 @@ import chinese_calendar as calendar  # with different import style
 on_holiday, holiday_name = calendar.get_holiday_detail(april_last)
 self.assertTrue(on_holiday)
 self.assertEqual(calendar.Holiday.labour_day.value, holiday_name)
+
+# even check if a holiday is in lieu
+import chinese_calendar
+self.assertFalse(chinese_calendar.is_in_lieu(datetime.date(2006, 1, 1)))
+self.assertTrue(chinese_calendar.is_in_lieu(datetime.date(2006, 1, 2)))
 ```
 
 ## Other Languages
