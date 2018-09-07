@@ -24,6 +24,7 @@ def generate_constants():
     file_content = constants_template.format(
         '\n'.join(_get_lines(arrangement.holidays)),
         '\n'.join(_get_lines(arrangement.workdays)),
+        '\n'.join(_get_lines(arrangement.in_lieu_days)),
     )
     file_path = _get_constants_file_path()
     with open(file_path, 'wb') as f:

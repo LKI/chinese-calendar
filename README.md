@@ -31,6 +31,11 @@ import chinese_calendar as calendar  # 也可以这样 import
 on_holiday, holiday_name = calendar.get_holiday_detail(april_last)
 self.assertTrue(on_holiday)
 self.assertEqual(calendar.Holiday.labour_day.value, holiday_name)
+
+# 还能判断法定节假日是不是调休
+import chinese_calendar
+self.assertFalse(chinese_calendar.is_in_lieu(datetime.date(2006, 1, 1)))
+self.assertTrue(chinese_calendar.is_in_lieu(datetime.date(2006, 1, 2)))
 ```
 
 ## 其它语言

@@ -3,7 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 import datetime
 
-from chinese_calendar.constants import holidays, workdays
+from chinese_calendar.constants import holidays, in_lieu_days, workdays
 
 
 def _wrap_date(date):
@@ -60,6 +60,19 @@ def is_workday(date):
 
     weekday = date.weekday()
     return bool(date in workdays.keys() or (weekday <= 4 and date not in holidays.keys()))
+
+
+def is_in_lieu(date):
+    """
+    check if one date is in lieu in China.
+    in other words, Chinese people get rest at that day because of legal holiday.
+
+    :type date: datetime.date | datetime.datetime
+    :rtype: bool
+    """
+    date = _validate_date(date)
+
+    return date in in_lieu_days
 
 
 def get_holiday_detail(date):
