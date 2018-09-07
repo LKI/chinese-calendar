@@ -43,6 +43,10 @@ in_lieu_days = {}
 
 
 class Arrangement(object):
+    WORKDAY = 1
+    HOLIDAY = 2
+    IN_LIEU = 3
+
     def __init__(self):
         self.holidays = {}
         self.workdays = {}
@@ -52,8 +56,7 @@ class Arrangement(object):
         self.month = None
         self.day = None
         self.holiday = None
-        self.is_working = None
-        self.is_in_lieu = None
+        self.day_type = None
 
         for method in dir(self):
             try:
@@ -74,11 +77,11 @@ class Arrangement(object):
         """
         self.year_at(2018) \
             .nyd().rest(1, 1) \
-            .sf().rest(2, 15).to(2, 21).work(2, 11).work(2, 24) \
-            .tsd().rest(4, 5).to(4, 7).work(4, 8) \
-            .ld().rest(4, 29).to(5, 1).work(4, 28) \
+            .sf().rest(2, 15).to(2, 21).work(2, 11).work(2, 24).in_lieu(2, 20).to(2, 21) \
+            .tsd().rest(4, 5).to(4, 7).work(4, 8).in_lieu(4, 6) \
+            .ld().rest(4, 29).to(5, 1).work(4, 28).in_lieu(4, 30) \
             .dbf().rest(6, 18) \
-            .nd().rest(10, 1).to(10, 7).work(9, 29).work(9, 30) \
+            .nd().rest(10, 1).to(10, 7).work(9, 29).to(9, 30).in_lieu(10, 4).to(10, 5) \
             .maf().rest(9, 24)
 
     def _2017(self):
@@ -92,11 +95,11 @@ class Arrangement(object):
         """
         self.year_at(2017) \
             .nyd().rest(1, 1).to(1, 2) \
-            .sf().rest(1, 27).to(2, 2).work(1, 22).work(2, 4) \
-            .tsd().rest(4, 2).to(4, 4).work(4, 1) \
+            .sf().rest(1, 27).to(2, 2).work(1, 22).work(2, 4).in_lieu(2, 1).to(2, 2) \
+            .tsd().rest(4, 2).to(4, 4).work(4, 1).in_lieu(4, 3) \
             .ld().rest(5, 1) \
-            .dbf().rest(5, 28).to(5, 30).work(5, 27) \
-            .nd().rest(10, 1).to(10, 8).work(9, 30) \
+            .dbf().rest(5, 28).to(5, 30).work(5, 27).in_lieu(5, 29) \
+            .nd().rest(10, 1).to(10, 8).work(9, 30).in_lieu(10, 6) \
             .maf().rest(10, 4)  # 国庆中秋相连，经查证10月4日为中秋
 
     def _2016(self):
@@ -111,12 +114,12 @@ class Arrangement(object):
         """
         self.year_at(2016) \
             .nyd().rest(1, 1) \
-            .sf().rest(2, 7).to(2, 13).work(2, 6).work(2, 14) \
+            .sf().rest(2, 7).to(2, 13).work(2, 6).work(2, 14).in_lieu(2, 11).to(2, 12) \
             .tsd().rest(4, 4) \
             .ld().rest(5, 1).to(5, 2) \
-            .dbf().rest(6, 9).to(6, 11).work(6, 12) \
-            .maf().rest(9, 15).to(9, 17).work(9, 18) \
-            .nd().rest(10, 1).to(10, 7).work(10, 8).to(10, 9)
+            .dbf().rest(6, 9).to(6, 11).work(6, 12).in_lieu(6, 10) \
+            .maf().rest(9, 15).to(9, 17).work(9, 18).in_lieu(9, 16) \
+            .nd().rest(10, 1).to(10, 7).work(10, 8).to(10, 9).in_lieu(10, 6).to(10, 7)
 
     def _2015(self):
         """ http://www.gov.cn/zhengce/content/2014-12/16/content_9302.htm
@@ -134,14 +137,14 @@ class Arrangement(object):
         9月3日至5日调休放假，共3天。其中9月3日（星期四）放假，9月4日（星期五）调休，9月6日（星期日）上班。
         """
         self.year_at(2015) \
-            .nyd().rest(1, 1).to(1, 3).work(1, 4) \
-            .sf().rest(2, 18).to(2, 24).work(2, 15).work(2, 28) \
+            .nyd().rest(1, 1).to(1, 3).work(1, 4).in_lieu(1, 2) \
+            .sf().rest(2, 18).to(2, 24).work(2, 15).work(2, 28).in_lieu(2, 23).to(2, 24) \
             .tsd().rest(4, 5).to(4, 6) \
             .ld().rest(5, 1) \
             .dbf().rest(6, 20).rest(6, 22) \
             .maf().rest(9, 27) \
-            .nd().rest(10, 1).to(10, 7).work(10, 10) \
-            .afd().rest(9, 3).to(9, 4).work(9, 6)
+            .nd().rest(10, 1).to(10, 7).work(10, 10).in_lieu(10, 7) \
+            .afd().rest(9, 3).to(9, 4).work(9, 6).in_lieu(9, 4)
 
     def _2014(self):
         """ http://www.gov.cn/zwgk/2013-12/11/content_2546204.htm
@@ -155,12 +158,12 @@ class Arrangement(object):
         """
         self.year_at(2014) \
             .nyd().rest(1, 1) \
-            .sf().rest(1, 31).to(2, 6).work(1, 26).work(2, 8) \
+            .sf().rest(1, 31).to(2, 6).work(1, 26).work(2, 8).in_lieu(2, 5).to(2, 6) \
             .tsd().rest(4, 5).to(4, 7) \
-            .ld().rest(5, 1).to(5, 3).work(5, 4) \
+            .ld().rest(5, 1).to(5, 3).work(5, 4).in_lieu(5, 2) \
             .dbf().rest(6, 2) \
             .maf().rest(9, 8) \
-            .nd().rest(10, 1).to(10, 7).work(9, 28).work(10, 11)
+            .nd().rest(10, 1).to(10, 7).work(9, 28).work(10, 11).in_lieu(10, 6).to(10, 7)
 
     def _2013(self):
         """ http://www.gov.cn/zwgk/2012-12/10/content_2286598.htm
@@ -173,13 +176,13 @@ class Arrangement(object):
 七、国庆节：10月1日至7日放假调休，共7天。9月29日（星期日）、10月12日（星期六）上班。
         """
         self.year_at(2013) \
-            .nyd().rest(1, 1).to(1, 3).work(1, 5).to(1, 6) \
-            .sf().rest(2, 9).to(2, 15).work(2, 16).work(2, 17) \
-            .tsd().rest(4, 4).to(4, 6).work(4, 7) \
-            .ld().rest(4, 29).to(5, 1).work(4, 27).work(4, 28) \
-            .dbf().rest(6, 10).to(6, 12).work(6, 8).work(6, 9) \
-            .maf().rest(9, 19).to(9, 21).work(9, 22) \
-            .nd().rest(10, 1).to(10, 7).work(9, 29).work(10, 12)
+            .nyd().rest(1, 1).to(1, 3).work(1, 5).to(1, 6).in_lieu(1, 2).to(1, 3) \
+            .sf().rest(2, 9).to(2, 15).work(2, 16).to(2, 17).in_lieu(2, 14).to(2, 15) \
+            .tsd().rest(4, 4).to(4, 6).work(4, 7).in_lieu(4, 5) \
+            .ld().rest(4, 29).to(5, 1).work(4, 27).to(4, 28).in_lieu(4, 29).to(4, 30) \
+            .dbf().rest(6, 10).to(6, 12).work(6, 8).to(6, 9).in_lieu(6, 10).to(6, 11) \
+            .maf().rest(9, 19).to(9, 21).work(9, 22).in_lieu(9, 20) \
+            .nd().rest(10, 1).to(10, 7).work(9, 29).work(10, 12).in_lieu(10, 4).in_lieu(10, 7)
 
     def _2012(self):
         """ http://www.gov.cn/zwgk/2011-12/06/content_2012097.htm
@@ -193,13 +196,13 @@ class Arrangement(object):
         注意：今年元旦特殊处理，去年上班 Σ( ° △ °|||)︴
         """
         self.year_at(2012) \
-            .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(1, 22).to(1, 28).work(1, 21).work(1, 29) \
-            .tsd().rest(4, 2).to(4, 4).work(3, 31).work(4, 1) \
-            .ld().rest(4, 29).to(5, 1).work(4, 28) \
+            .nyd().rest(1, 1).to(1, 3).in_lieu(1, 3) \
+            .sf().rest(1, 22).to(1, 28).work(1, 21).work(1, 29).in_lieu(1, 26).to(1, 27) \
+            .tsd().rest(4, 2).to(4, 4).work(3, 31).work(4, 1).in_lieu(4, 2).to(4, 3) \
+            .ld().rest(4, 29).to(5, 1).work(4, 28).in_lieu(4, 30) \
             .dbf().rest(6, 22).rest(6, 24) \
             .maf().rest(9, 30) \
-            .nd().rest(10, 1).to(10, 7).work(9, 29)
+            .nd().rest(10, 1).to(10, 7).work(9, 29).in_lieu(10, 5)
 
     def _2011(self):
         """ http://www.gov.cn/zwgk/2010-12/10/content_1762643.htm
@@ -215,12 +218,12 @@ class Arrangement(object):
         """
         self.year_at(2011) \
             .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(2, 2).to(2, 8).work(1, 30).work(2, 12) \
-            .tsd().rest(4, 3).to(4, 5).work(4, 2) \
+            .sf().rest(2, 2).to(2, 8).work(1, 30).work(2, 12).in_lieu(2, 7).to(2, 8) \
+            .tsd().rest(4, 3).to(4, 5).work(4, 2).in_lieu(4, 4) \
             .ld().rest(4, 30).to(5, 2) \
             .dbf().rest(6, 4).rest(6, 6) \
             .maf().rest(9, 10).to(9, 12) \
-            .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9) \
+            .nd().rest(10, 1).to(10, 7).work(10, 8).to(10, 9).in_lieu(10, 6).to(10, 7) \
             .nyd().work(12, 31)
 
     def _2010(self):
@@ -235,12 +238,12 @@ class Arrangement(object):
         """
         self.year_at(2010) \
             .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(2, 13).to(2, 19).work(2, 20).work(2, 21) \
+            .sf().rest(2, 13).to(2, 19).work(2, 20).to(2, 21).in_lieu(2, 18).to(2, 19) \
             .tsd().rest(4, 3).to(4, 5) \
             .ld().rest(5, 1).to(5, 3) \
-            .dbf().rest(6, 14).to(6, 16).work(6, 12).work(6, 13) \
-            .maf().rest(9, 22).to(9, 24).work(9, 19).work(9, 25) \
-            .nd().rest(10, 1).to(10, 7).work(9, 26).work(10, 9)
+            .dbf().rest(6, 14).to(6, 16).work(6, 12).to(6, 13).in_lieu(6, 14).to(6, 15) \
+            .maf().rest(9, 22).to(9, 24).work(9, 19).work(9, 25).in_lieu(9, 23).to(9, 24) \
+            .nd().rest(10, 1).to(10, 7).work(9, 26).work(10, 9).in_lieu(10, 6).to(10, 7)
 
     def _2009(self):
         """ http://www.gov.cn/zwgk/2008-12/10/content_1174014.htm
@@ -266,12 +269,12 @@ class Arrangement(object):
 9月27日（星期日）、10月10日（星期六）上班。
         """
         self.year_at(2009) \
-            .nyd().rest(1, 1).to(1, 3).work(1, 4) \
-            .sf().rest(1, 25).to(1, 31).work(1, 24).work(2, 1) \
+            .nyd().rest(1, 1).to(1, 3).work(1, 4).in_lieu(1, 2) \
+            .sf().rest(1, 25).to(1, 31).work(1, 24).work(2, 1).in_lieu(1, 29).to(1, 30) \
             .tsd().rest(4, 4).to(4, 6) \
             .ld().rest(5, 1).to(5, 3) \
-            .dbf().rest(5, 28).to(5, 30).work(5, 31) \
-            .nd().rest(10, 1).to(10, 8).work(9, 27).work(10, 10) \
+            .dbf().rest(5, 28).to(5, 30).work(5, 31).in_lieu(5, 29) \
+            .nd().rest(10, 1).to(10, 8).work(9, 27).work(10, 10).in_lieu(10, 7).to(10, 8) \
             .maf().rest(10, 3)  # 国庆中秋相连，经查证10月3日为中秋
 
     def _2008(self):
@@ -296,9 +299,9 @@ class Arrangement(object):
         """
         self.year_at(2008) \
             .nyd().rest(1, 1) \
-            .sf().rest(2, 6).to(2, 12).work(2, 2).work(2, 3) \
+            .sf().rest(2, 6).to(2, 12).work(2, 2).to(2, 3).in_lieu(2, 11).to(2, 12) \
             .tsd().rest(4, 4).to(4, 6) \
-            .ld().rest(5, 1).to(5, 3).work(5, 4) \
+            .ld().rest(5, 1).to(5, 3).work(5, 4).in_lieu(5, 2) \
             .dbf().rest(6, 7).to(6, 9) \
             .maf().rest(9, 13).to(9, 15) \
             .nd().rest(9, 29).to(10, 5)
@@ -317,10 +320,10 @@ class Arrangement(object):
         注意：明年元旦假期，今年年尾会放假。今年元旦假期，去年年尾要上班。
         """
         self.year_at(2007) \
-            .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(2, 18).to(2, 24).work(2, 17).work(2, 25) \
-            .ld().rest(5, 1).to(5, 7).work(4, 28).work(4, 29) \
-            .nd().rest(10, 1).to(10, 7).work(9, 29).work(9, 30) \
+            .nyd().rest(1, 1).to(1, 3).in_lieu(1, 2).to(1, 3) \
+            .sf().rest(2, 18).to(2, 24).work(2, 17).work(2, 25).in_lieu(2, 22).to(2, 23) \
+            .ld().rest(5, 1).to(5, 7).work(4, 28).to(4, 29).in_lieu(5, 4).in_lieu(5, 7) \
+            .nd().rest(10, 1).to(10, 7).work(9, 29).to(9, 30).in_lieu(10, 4).to(10, 5) \
             .nyd().rest(12, 30).to(12, 31)
 
     def _2006(self):
@@ -338,9 +341,9 @@ class Arrangement(object):
         """
         self.year_at(2006) \
             .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(1, 29).to(2, 4).work(1, 28).work(2, 5) \
-            .ld().rest(5, 1).to(5, 7).work(4, 29).work(4, 30) \
-            .nd().rest(10, 1).to(10, 7).work(9, 30).work(10, 8) \
+            .sf().rest(1, 29).to(2, 4).work(1, 28).work(2, 5).in_lieu(2, 2).to(2, 3) \
+            .ld().rest(5, 1).to(5, 7).work(4, 29).to(4, 30).in_lieu(5, 4).to(5, 5) \
+            .nd().rest(10, 1).to(10, 7).work(9, 30).work(10, 8).in_lieu(10, 5).to(10, 6) \
             .nyd().work(12, 30).to(12, 31)
 
     def _2005(self):
@@ -358,9 +361,9 @@ class Arrangement(object):
         """
         self.year_at(2005) \
             .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(2, 9).to(2, 15).work(2, 5).work(2, 6) \
-            .ld().rest(5, 1).to(5, 7).work(4, 30).work(5, 8) \
-            .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9)
+            .sf().rest(2, 9).to(2, 15).work(2, 5).to(2, 6).in_lieu(2, 14).to(2, 15) \
+            .ld().rest(5, 1).to(5, 7).work(4, 30).work(5, 8).in_lieu(5, 5).to(5, 6) \
+            .nd().rest(10, 1).to(10, 7).work(10, 8).to(10, 9).in_lieu(10, 6).to(10, 7)
 
     def _2004(self):
         """
@@ -381,9 +384,9 @@ class Arrangement(object):
         """
         self.year_at(2004) \
             .nyd().rest(1, 1) \
-            .sf().rest(1, 22).to(1, 28).work(1, 17).work(1, 18) \
-            .ld().rest(5, 1).to(5, 7).work(5, 8).work(5, 9) \
-            .nd().rest(10, 1).to(10, 7).work(10, 9).work(10, 10)
+            .sf().rest(1, 22).to(1, 28).work(1, 17).to(1, 18).in_lieu(1, 27).to(1, 28) \
+            .ld().rest(5, 1).to(5, 7).work(5, 8).to(5, 9).in_lieu(5, 6).to(5, 7) \
+            .nd().rest(10, 1).to(10, 7).work(10, 9).to(10, 10).in_lieu(10, 6).to(10, 7)
 
     # 注：2003年及以前的安排就很凌乱了（其实06/07两年也是叫“部分节假日安排”）
     # 假如之后想要加的话可以参考以下地址：
@@ -432,22 +435,21 @@ class Arrangement(object):
         return self
 
     def work(self, month, day):
-        return self.save(month, day, is_working=True)
+        return self.save(month, day, self.WORKDAY)
 
     def rest(self, month, day):
-        return self.save(month, day, is_working=False)
+        return self.save(month, day, self.HOLIDAY)
 
     def in_lieu(self, month, day):
         """ 调休 in lieu """
-        return self.save(month, day, is_in_lieu=True)
+        return self.save(month, day, self.IN_LIEU)
 
-    def save(self, month, day, is_working=True, is_in_lieu=False):
+    def save(self, month, day, day_type):
         if not self.year:
             raise ValueError('should set year before saving holiday')
         if not self.holiday:
             raise ValueError('should set holiday before saving holiday')
-        self.is_working = is_working
-        self.is_in_lieu = is_in_lieu
+        self.day_type = day_type
         self.days[datetime.date(year=self.year, month=month, day=day)] = self.holiday
         self.month = month
         self.day = day
@@ -467,8 +469,8 @@ class Arrangement(object):
 
     @property
     def days(self):
-        if self.is_working:
-            return self.workdays
-        if self.is_in_lieu:
-            return self.in_lieu_days
-        return self.holidays
+        return {
+            self.HOLIDAY: self.holidays,
+            self.IN_LIEU: self.in_lieu_days,
+            self.WORKDAY: self.workdays,
+        }[self.day_type]
