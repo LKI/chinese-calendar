@@ -97,13 +97,13 @@ class Arrangement(object):
         """
         self.year_at(2018) \
             .nyd().rest(1, 1) \
-            .sf().rest(2, 15).to(2, 21).work(2, 11).work(2, 24).in_lieu(2, 19).to(2, 21) \
+            .sf().rest(2, 15).to(2, 21).work(2, 11).work(2, 24).in_lieu(2, 20).to(2, 21) \
             .tsd().rest(4, 5).to(4, 7).work(4, 8).in_lieu(4, 6) \
             .ld().rest(4, 29).to(5, 1).work(4, 28).in_lieu(4, 30) \
             .dbf().rest(6, 18) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).to(9, 30).in_lieu(10, 4).to(10, 5) \
             .maf().rest(9, 24)\
-            .nyd().rest(12, 30).to(12, 31).work(12, 29).in_lieu(12, 31)
+            .nyd().work(12, 29).in_lieu(12, 31)
 
     def _2017(self):
         """ http://www.gov.cn/zhengce/content/2016-12/01/content_5141603.htm
