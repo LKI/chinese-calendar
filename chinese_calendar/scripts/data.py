@@ -75,15 +75,14 @@ class Arrangement(object):
         六、中秋节：9月13日放假，与周末连休。
         七、国庆节：10月1日至7日放假调休，共7天。9月29日（星期天）、10月12日（周六）上班。
         """
-        self.year_at(2019)\
-            .nyd().rest(1, 1)\
-            .sf().rest(2, 4).to(2, 10).work(2, 2).to(2, 3).in_lieu(2, 4).in_lieu(2, 8)\
-            .tsd().rest(4, 5)\
-            .ld().rest(5, 1)\
-            .dbf().rest(6, 7)\
-            .maf().rest(9, 13)\
+        self.year_at(2019) \
+            .nyd().rest(1, 1) \
+            .sf().rest(2, 4).to(2, 10).work(2, 2).to(2, 3).in_lieu(2, 4).in_lieu(2, 8) \
+            .tsd().rest(4, 5) \
+            .ld().rest(5, 1) \
+            .dbf().rest(6, 7) \
+            .maf().rest(9, 13) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).work(10, 12).in_lieu(10, 4).in_lieu(10, 7)
-        pass
 
     def _2018(self):
         """ http://www.gov.cn/zhengce/content/2017-11/30/content_5243579.htm
@@ -102,7 +101,7 @@ class Arrangement(object):
             .ld().rest(4, 29).to(5, 1).work(4, 28).in_lieu(4, 30) \
             .dbf().rest(6, 18) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).to(9, 30).in_lieu(10, 4).to(10, 5) \
-            .maf().rest(9, 24)\
+            .maf().rest(9, 24) \
             .nyd().rest(12, 30).to(12, 31).work(12, 29).in_lieu(12, 31)
 
     def _2017(self):

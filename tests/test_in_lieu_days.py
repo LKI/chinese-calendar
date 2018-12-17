@@ -22,6 +22,8 @@ class InLieuTests(unittest.TestCase):
                 in_lieu_days_amount += 1  # 11年要补班12年的元旦假期
             elif year == 2012:
                 workdays_amount += 1  # 12年可以享受11年补班的假
+            elif year == 2018:
+                workdays_amount += 1  # 19年元旦多享受一天假期
             self.assertEqual(in_lieu_days_amount, workdays_amount, 'year {}'.format(year))
 
     def test_in_lieu_should_be_weekday(self):

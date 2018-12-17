@@ -12,4 +12,4 @@ install:
 
 script:
   - flake8 chinese_calendar
-  - pytest --cov=./
+  - pytest --cov=chinese_calendar

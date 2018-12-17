@@ -6,7 +6,7 @@
 [![README](https://img.shields.io/badge/简介-中文-brightgreen.svg)](https://github.com/LKI/chinese-calendar/blob/master/README.md)
 
 Check if some date is workday or holiday in China.
-Support 2004 ~ 2018.
+Support 2004 ~ 2019.
 Available in Python2 and Python3.
 
 ## Installation
