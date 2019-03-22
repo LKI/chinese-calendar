@@ -7,7 +7,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='chinesecalendar',
-    version='1.2.0',
+    version='1.2.1',
     description='check if some day is holiday in China',
     long_description=pypandoc.convert('README.md', 'rst'),
     author='Lirian Su',
