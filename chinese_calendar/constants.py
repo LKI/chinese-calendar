@@ -421,6 +421,9 @@ holidays = {
     datetime.date(year=2019, month=2, day=10): Holiday.spring_festival.value,
     datetime.date(year=2019, month=4, day=5): Holiday.tomb_sweeping_day.value,
     datetime.date(year=2019, month=5, day=1): Holiday.labour_day.value,
+    datetime.date(year=2019, month=5, day=2): Holiday.labour_day.value,
+    datetime.date(year=2019, month=5, day=3): Holiday.labour_day.value,
+    datetime.date(year=2019, month=5, day=4): Holiday.labour_day.value,
     datetime.date(year=2019, month=6, day=7): Holiday.dragon_boat_festival.value,
     datetime.date(year=2019, month=9, day=13): Holiday.mid_autumn_festival.value,
     datetime.date(year=2019, month=10, day=1): Holiday.national_day.value,
@@ -530,6 +533,8 @@ workdays = {
     datetime.date(year=2018, month=12, day=29): Holiday.new_years_day.value,
     datetime.date(year=2019, month=2, day=2): Holiday.spring_festival.value,
     datetime.date(year=2019, month=2, day=3): Holiday.spring_festival.value,
+    datetime.date(year=2019, month=4, day=28): Holiday.labour_day.value,
+    datetime.date(year=2019, month=5, day=5): Holiday.labour_day.value,
     datetime.date(year=2019, month=9, day=29): Holiday.national_day.value,
     datetime.date(year=2019, month=10, day=12): Holiday.national_day.value,
 }
@@ -633,6 +638,8 @@ in_lieu_days = {
     datetime.date(year=2018, month=12, day=31): Holiday.new_years_day.value,
     datetime.date(year=2019, month=2, day=4): Holiday.spring_festival.value,
     datetime.date(year=2019, month=2, day=8): Holiday.spring_festival.value,
+    datetime.date(year=2019, month=5, day=2): Holiday.labour_day.value,
+    datetime.date(year=2019, month=5, day=3): Holiday.labour_day.value,
     datetime.date(year=2019, month=10, day=4): Holiday.national_day.value,
     datetime.date(year=2019, month=10, day=7): Holiday.national_day.value,
 }
