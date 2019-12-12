@@ -14,7 +14,7 @@ except ImportError:
 
 setup(
     name='chinesecalendar',
-    version='1.3.0',
+    version='1.3.1',
     description='check if some day is holiday in China',
     long_description=long_description,
     author='Lirian Su',
