@@ -569,7 +569,7 @@ workdays = {
     datetime.date(year=2020, month=4, day=26): Holiday.labour_day.value,
     datetime.date(year=2020, month=5, day=9): Holiday.labour_day.value,
     datetime.date(year=2020, month=6, day=28): Holiday.dragon_boat_festival.value,
-    datetime.date(year=2020, month=9, day=17): Holiday.national_day.value,
+    datetime.date(year=2020, month=9, day=27): Holiday.national_day.value,
     datetime.date(year=2020, month=10, day=10): Holiday.national_day.value,
 }
 
