@@ -80,7 +80,7 @@ class Arrangement(object):
             .tsd().rest(4, 4).to(4, 6) \
             .ld().rest(5, 1).to(5, 5).work(4, 26).work(5, 9).in_lieu(5, 4).to(5, 5) \
             .dbf().rest(6, 25).to(6, 27).work(6, 28).in_lieu(6, 26) \
-            .nd().rest(10, 1).to(10, 8).work(9, 17).work(10, 10).in_lieu(10, 7).to(10, 8)
+            .nd().rest(10, 1).to(10, 8).work(9, 27).work(10, 10).in_lieu(10, 7).to(10, 8)
 
     def _2019(self):
         """ http://www.gov.cn/xinwen/2018-12/06/content_5346287.htm
