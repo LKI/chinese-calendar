@@ -6,8 +6,10 @@
 [![README](https://img.shields.io/badge/README-English-brightgreen.svg)](https://github.com/LKI/chinese-calendar/blob/master/README.en.md)
 
 判断某年某月某一天是不是工作日/节假日。
-支持 2004年 至 2020年。
+支持 2004年 至 2020年，包括 2020年 的春节延长。
 兼容 Python2 与 Python3.
+
+> [武汉加油！](https://wuhan2020.github.io/)
 
 ## 安装
 
