@@ -4,19 +4,15 @@ from setuptools import setup
 with open('requirements.txt') as f:
     requirements = [_.strip() for _ in f.readlines() if _]
 
-long_description = 'check if some day is holiday in China'
-try:
-    import pypandoc
-
-    long_description = pypandoc.convert('README.md', 'rst')
-except ImportError:
-    pass
+with open('README.md', 'r', encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name='chinesecalendar',
     version='1.4.0',
     description='check if some day is holiday in China',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author='Lirian Su',
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/chinese-calendar',
