@@ -1,6 +1,6 @@
 -r test-requirements.txt
 
-bumpversion
+bump2version
 ipython
 pypandoc
 twine
