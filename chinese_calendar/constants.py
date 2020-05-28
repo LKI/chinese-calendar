@@ -15,16 +15,16 @@ class Holiday(Enum):
         obj.days = days
         return obj
 
-    new_years_day = 'New Year\'s Day', '元旦', 1
-    spring_festival = 'Spring Festival', '春节', 3
-    tomb_sweeping_day = 'Tomb-sweeping Day', '清明', 1
-    labour_day = 'Labour Day', '劳动节', 1
-    dragon_boat_festival = 'Dragon Boat Festival', '端午', 1
-    national_day = 'National Day', '国庆节', 3
-    mid_autumn_festival = 'Mid-autumn Festival', '中秋', 1
+    new_years_day = "New Year's Day", "元旦", 1
+    spring_festival = "Spring Festival", "春节", 3
+    tomb_sweeping_day = "Tomb-sweeping Day", "清明", 1
+    labour_day = "Labour Day", "劳动节", 1
+    dragon_boat_festival = "Dragon Boat Festival", "端午", 1
+    national_day = "National Day", "国庆节", 3
+    mid_autumn_festival = "Mid-autumn Festival", "中秋", 1
 
     # special holidays
-    anti_fascist_70th_day = 'Anti-Fascist 70th Day', '中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日', 1
+    anti_fascist_70th_day = "Anti-Fascist 70th Day", "中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日", 1
 
 
 holidays = {

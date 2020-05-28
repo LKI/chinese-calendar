@@ -12,7 +12,8 @@ class InLieuTests(unittest.TestCase):
         min_year, max_year = min(chinese_calendar.in_lieu_days.keys()).year, max(chinese_calendar.holidays.keys()).year
         for year in range(min_year, max_year + 1):
             in_lieu_days_amount = len(
-                list(filter(lambda date: date.year == year, chinese_calendar.in_lieu_days.keys())))
+                list(filter(lambda date: date.year == year, chinese_calendar.in_lieu_days.keys()))
+            )
             workdays_amount = len(list(filter(lambda date: date.year == year, chinese_calendar.workdays.keys())))
             if year == 2006:
                 in_lieu_days_amount += 2  # 06年要补班07年的元旦假期
@@ -24,7 +25,7 @@ class InLieuTests(unittest.TestCase):
                 workdays_amount += 1  # 12年可以享受11年补班的假
             elif year == 2018:
                 workdays_amount += 1  # 19年元旦多享受一天假期
-            self.assertEqual(in_lieu_days_amount, workdays_amount, 'year {}'.format(year))
+            self.assertEqual(in_lieu_days_amount, workdays_amount, "year {}".format(year))
 
     def test_in_lieu_should_be_weekday(self):
         for in_lieu_day in chinese_calendar.in_lieu_days.keys():
