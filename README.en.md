@@ -7,7 +7,6 @@
 
 Check if some date is workday or holiday in China.
 Support 2004 ~ 2020.
-Available in Python2 and Python3.
 
 ## Installation
 

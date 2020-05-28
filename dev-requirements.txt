@@ -1,6 +1,0 @@
--r test-requirements.txt
-
-bump2version
-ipython
-twine
-wheel

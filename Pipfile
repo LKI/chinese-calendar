@@ -1,0 +1,13 @@
+[[source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple"
+verify_ssl = true
+
+[packages]
+
+[dev-packages]
+black = {version = "==19.10b0", markers = "python_version == '3.8'"}
+flake8 = ">=3.8.2"
+isort = {version = ">=4.3.21", extras = ["pipfile"]}
+pathlib2 = {version = ">=2.3.5", markers = "python_version == '3.5'"}
+pytest-cov = ">=2.9.0"

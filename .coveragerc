@@ -1,4 +1,0 @@
-[run]
-branch = True
-include = chinese_calendar/*
-omit = tests/*

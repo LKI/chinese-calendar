@@ -29,11 +29,12 @@ def _validate_date(*dates):
         return list(map(_validate_date, dates))
     date = _wrap_date(dates[0])
     if not isinstance(date, datetime.date):
-        raise NotImplementedError('unsupported type {}, expected type is datetime.date'.format(type(date)))
+        raise NotImplementedError("unsupported type {}, expected type is datetime.date".format(type(date)))
     min_year, max_year = min(holidays.keys()).year, max(holidays.keys()).year
     if not (min_year <= date.year <= max_year):
-        raise NotImplementedError('no available data for year {}, only year between [{}, {}] supported'.format(
-            date.year, min_year, max_year))
+        raise NotImplementedError(
+            "no available data for year {}, only year between [{}, {}] supported".format(date.year, min_year, max_year)
+        )
     return date
 
 
