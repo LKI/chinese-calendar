@@ -9,7 +9,7 @@ class DocTests(unittest.TestCase):
         import datetime
 
         # Check if 2018-04-30 is holiday in China
-        from chinese_calendar import is_workday, is_holiday
+        from chinese_calendar import is_holiday, is_workday
 
         april_last = datetime.date(2018, 4, 30)
         self.assertFalse(is_workday(april_last))
