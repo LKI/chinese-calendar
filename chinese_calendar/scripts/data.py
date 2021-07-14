@@ -122,10 +122,10 @@ class Arrangement(object):
         self.year_at(2019) \
             .nyd().rest(1, 1) \
             .sf().rest(2, 4).to(2, 10).work(2, 2).to(2, 3).in_lieu(2, 4).in_lieu(2, 8) \
-            .tsd().rest(4, 5) \
+            .tsd().rest(4, 5).to(4, 7) \
             .ld().rest(5, 1).to(5, 4).work(4, 28).work(5, 5).in_lieu(5, 2).in_lieu(5, 3) \
-            .dbf().rest(6, 7) \
-            .maf().rest(9, 13) \
+            .dbf().rest(6, 7).to(6, 9) \
+            .maf().rest(9, 13).to(9, 15) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).work(10, 12).in_lieu(10, 4).in_lieu(10, 7)
 
     def _2018(self):
