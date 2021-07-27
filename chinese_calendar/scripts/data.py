@@ -464,35 +464,35 @@ class Arrangement(object):
         return self
 
     def nyd(self):
-        """ 元旦 New Year's Day """
+        """元旦 New Year's Day"""
         return self.mark(chinese_calendar.Holiday.new_years_day)
 
     def sf(self):
-        """ 春节 Sprint Festival """
+        """春节 Sprint Festival"""
         return self.mark(chinese_calendar.Holiday.spring_festival)
 
     def tsd(self):
-        """ 清明节 Tomb-Sweeping Day """
+        """清明节 Tomb-Sweeping Day"""
         return self.mark(chinese_calendar.Holiday.tomb_sweeping_day)
 
     def ld(self):
-        """ 劳动节 Labour Day """
+        """劳动节 Labour Day"""
         return self.mark(chinese_calendar.Holiday.labour_day)
 
     def dbf(self):
-        """ 端午节 Dragon Boat Festival """
+        """端午节 Dragon Boat Festival"""
         return self.mark(chinese_calendar.Holiday.dragon_boat_festival)
 
     def nd(self):
-        """ 国庆节 National Day """
+        """国庆节 National Day"""
         return self.mark(chinese_calendar.Holiday.national_day)
 
     def maf(self):
-        """ 中秋节 Mid-autumn Festival """
+        """中秋节 Mid-autumn Festival"""
         return self.mark(chinese_calendar.Holiday.mid_autumn_festival)
 
     def afd(self):
-        """ 中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日 Anti-Fascist 70th Day """
+        """中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日 Anti-Fascist 70th Day"""
         return self.mark(chinese_calendar.Holiday.anti_fascist_70th_day)
 
     def mark(self, holiday):
@@ -506,7 +506,7 @@ class Arrangement(object):
         return self.save(month, day, self.HOLIDAY)
 
     def in_lieu(self, month, day):
-        """ 调休 in lieu """
+        """调休 in lieu"""
         return self.save(month, day, self.IN_LIEU)
 
     def save(self, month, day, day_type):
