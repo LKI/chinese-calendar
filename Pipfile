@@ -6,7 +6,7 @@ verify_ssl = true
 [packages]
 
 [dev-packages]
-black = {version = "==21.7b0", markers = "python_version == '3.8'"}
+black = {version = "==21.7b0", markers = "python_version == '3.9'"}
 flake8 = ">=3.8.2"
-isort = {version = ">=4.3.21", extras = ["pipfile"], markers = "python_version == '3.8'"}
+isort = {version = ">=4.3.21", extras = ["pipfile"], markers = "python_version == '3.9'"}
 pytest-cov = ">=2.9.0"

@@ -24,8 +24,8 @@ jobs:
           python -m pip install -U pip pipenv
           pipenv sync --system --dev
       - name: Test all
-        if: matrix.python-version == 3.8
+        if: matrix.python-version == 3.9
         run: make test
       - name: Only Pytest
-        if: matrix.python-version != 3.8
+        if: matrix.python-version != 3.9
         run: make pytest
