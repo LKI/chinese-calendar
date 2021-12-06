@@ -18,3 +18,12 @@ test:
 .PHONY: pytest
 pytest:
 	pytest
+
+
+.PHONY: release
+release:
+	rm -rf dist
+	python setup.py release
+	sed -i 's/chinesecalendar/chinese_calendar/g' setup.py
+	python setup.py release
+	twine upload dist/*
