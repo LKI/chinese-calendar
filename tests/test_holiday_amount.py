@@ -16,8 +16,7 @@ class HolidayAmountTests(unittest.TestCase):
         for date in workdays.keys():
             if date.weekday() > 4:
                 holiday_amounts[date.year] -= 1
-        holiday_amounts[2007] -= 2  # 07年法定节假日有13天（国庆多了两天）
-        holiday_amounts[2008] -= 2  # 08年同上
+        holiday_amounts[2007] -= 1  # 07年法定节假日有12天（国庆多了两天，元旦少了一天）
         holiday_amounts[2011] += 1  # 11年要补班12年的元旦假期
         holiday_amounts[2012] -= 1  # 12年可以享受11年补班的假
         holiday_amounts[2015] -= 1  # 15年是中国人民抗日战争暨世界反法西斯战争胜利70周年，多放1天

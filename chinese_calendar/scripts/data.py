@@ -387,7 +387,7 @@ class Arrangement(object):
             .ld().rest(5, 1).to(5, 3).work(5, 4).in_lieu(5, 2) \
             .dbf().rest(6, 7).to(6, 9) \
             .maf().rest(9, 13).to(9, 15) \
-            .nd().rest(9, 29).to(10, 5)
+            .nd().rest(9, 29).to(10, 5).work(9, 27).to(9, 28).in_lieu(9, 29).to(9, 30)
 
     def _2007(self):
         """ http://www.gov.cn/fwxx/sh/2006-12/18/content_471877.htm
@@ -407,7 +407,7 @@ class Arrangement(object):
             .sf().rest(2, 18).to(2, 24).work(2, 17).work(2, 25).in_lieu(2, 22).to(2, 23) \
             .ld().rest(5, 1).to(5, 7).work(4, 28).to(4, 29).in_lieu(5, 4).in_lieu(5, 7) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).to(9, 30).in_lieu(10, 4).to(10, 5) \
-            .nyd().rest(12, 30).to(12, 31)
+            .nyd().rest(12, 30).to(12, 31).work(12, 29).in_lieu(12, 31)
 
     def _2006(self):
         """ http://www.gov.cn/jrzg/2005-12/22/content_133837.htm
