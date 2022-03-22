@@ -1,3 +1,8 @@
+## Version 1.7.0
+> on 2022-03-22
+
+* **FEAT**: 支持二十四节气的获取, thanks @yqkcn
+
 ## Version 1.6.0
 > on 2021-10-26
 
