@@ -4,6 +4,12 @@ from __future__ import absolute_import, unicode_literals
 import datetime
 
 from chinese_calendar.constants import holidays, in_lieu_days, workdays
+from chinese_calendar.solar_terms import (
+    SolarTerms,
+    SOLAR_TERMS_MONTH,
+    SOLAR_TERMS_C_NUMS,
+    SOLAR_TERMS_DELTA,
+)
 
 
 def _wrap_date(date):
@@ -29,11 +35,15 @@ def _validate_date(*dates):
         return list(map(_validate_date, dates))
     date = _wrap_date(dates[0])
     if not isinstance(date, datetime.date):
-        raise NotImplementedError("unsupported type {}, expected type is datetime.date".format(type(date)))
+        raise NotImplementedError(
+            "unsupported type {}, expected type is datetime.date".format(type(date))
+        )
     min_year, max_year = min(holidays.keys()).year, max(holidays.keys()).year
     if not (min_year <= date.year <= max_year):
         raise NotImplementedError(
-            "no available data for year {}, only year between [{}, {}] supported".format(date.year, min_year, max_year)
+            "no available data for year {}, only year between [{}, {}] supported".format(
+                date.year, min_year, max_year
+            )
         )
     return date
 
@@ -60,7 +70,9 @@ def is_workday(date):
     date = _validate_date(date)
 
     weekday = date.weekday()
-    return bool(date in workdays.keys() or (weekday <= 4 and date not in holidays.keys()))
+    return bool(
+        date in workdays.keys() or (weekday <= 4 and date not in holidays.keys())
+    )
 
 
 def is_in_lieu(date):
@@ -155,3 +167,54 @@ def find_workday(delta_days=0, date=None):
         while not is_workday(date):
             date += datetime.timedelta(days=sign)
     return date
+
+
+def get_solar_terms(start: datetime.date, end: datetime.date) -> (datetime.date, str):
+    """
+    生成 24 节气
+    通用寿星公式： https://www.jianshu.com/p/1f814c6bb475
+
+    通式寿星公式：[Y×D+C]-L
+    []里面取整数； Y=年数的后2位数； D=0.2422； L=Y/4，小寒、大寒、立春、雨水的 L=(Y-1)/4
+
+    :param start: 开始日期
+    :param end: 结束日期
+    :return: list[(datetime.date, str)]
+    """
+    if not 1900 <= start.year <= 2100 or not 1900 <= end.year <= 2100:
+        raise NotImplementedError("only year between [1900, 2100] supported")
+    D = 0.2422
+    result = []
+    year, month = start.year, start.month
+    while year < end.year or (year == end.year and month <= end.month):
+        # 按月计算节气
+        for solar_term in SOLAR_TERMS_MONTH[month]:
+            nums = SOLAR_TERMS_C_NUMS[solar_term]
+            C = nums[0] if year < 2000 else nums[1]
+            # 2000 年的小寒、大寒、立春、雨水按照 20 世纪的 C 值来算
+            if year == 2000 and solar_term in [
+                SolarTerms.lesser_cold,
+                SolarTerms.greater_cold,
+                SolarTerms.the_beginning_of_spring,
+                SolarTerms.rain_water,
+            ]:
+                C = nums[0]
+            Y = year % 100
+            L = int(Y / 4)
+            if solar_term in [
+                SolarTerms.lesser_cold,
+                SolarTerms.greater_cold,
+                SolarTerms.the_beginning_of_spring,
+                SolarTerms.rain_water,
+            ]:
+                L = int((Y - 1) / 4)
+            day = int(Y * D + C) - L
+            # 计算偏移量
+            if delta := SOLAR_TERMS_DELTA.get((year, solar_term)):
+                day += delta
+            result.append((datetime.date(year, month, day), solar_term.value[1]))
+        if month == 12:
+            year, month = year + 1, 1
+        else:
+            month += 1
+    return result
