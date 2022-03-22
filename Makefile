@@ -24,6 +24,7 @@ pytest:
 release:
 	rm -rf dist
 	python setup.py release
+	twine upload dist/*
 	sed -i 's/chinesecalendar/chinese_calendar/g' setup.py
 	python setup.py release
 	twine upload dist/*
