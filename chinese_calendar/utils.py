@@ -210,7 +210,8 @@ def get_solar_terms(start: datetime.date, end: datetime.date) -> (datetime.date,
                 L = int((Y - 1) / 4)
             day = int(Y * D + C) - L
             # 计算偏移量
-            if delta := SOLAR_TERMS_DELTA.get((year, solar_term)):
+            delta = SOLAR_TERMS_DELTA.get((year, solar_term))
+            if delta:
                 day += delta
             result.append((datetime.date(year, month, day), solar_term.value[1]))
         if month == 12:
