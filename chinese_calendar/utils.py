@@ -4,12 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import datetime
 
 from chinese_calendar.constants import holidays, in_lieu_days, workdays
-from chinese_calendar.solar_terms import (
-    SolarTerms,
-    SOLAR_TERMS_MONTH,
-    SOLAR_TERMS_C_NUMS,
-    SOLAR_TERMS_DELTA,
-)
+from chinese_calendar.solar_terms import SOLAR_TERMS_C_NUMS, SOLAR_TERMS_DELTA, SOLAR_TERMS_MONTH, SolarTerms
 
 
 def _wrap_date(date):
@@ -35,15 +30,11 @@ def _validate_date(*dates):
         return list(map(_validate_date, dates))
     date = _wrap_date(dates[0])
     if not isinstance(date, datetime.date):
-        raise NotImplementedError(
-            "unsupported type {}, expected type is datetime.date".format(type(date))
-        )
+        raise NotImplementedError("unsupported type {}, expected type is datetime.date".format(type(date)))
     min_year, max_year = min(holidays.keys()).year, max(holidays.keys()).year
     if not (min_year <= date.year <= max_year):
         raise NotImplementedError(
-            "no available data for year {}, only year between [{}, {}] supported".format(
-                date.year, min_year, max_year
-            )
+            "no available data for year {}, only year between [{}, {}] supported".format(date.year, min_year, max_year)
         )
     return date
 
@@ -70,9 +61,7 @@ def is_workday(date):
     date = _validate_date(date)
 
     weekday = date.weekday()
-    return bool(
-        date in workdays.keys() or (weekday <= 4 and date not in holidays.keys())
-    )
+    return bool(date in workdays.keys() or (weekday <= 4 and date not in holidays.keys()))
 
 
 def is_in_lieu(date):
