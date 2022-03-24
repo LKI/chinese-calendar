@@ -158,7 +158,7 @@ def find_workday(delta_days=0, date=None):
     return date
 
 
-def get_solar_terms(start: datetime.date, end: datetime.date) -> (datetime.date, str):
+def get_solar_terms(start, end):
     """
     生成 24 节气
     通用寿星公式： https://www.jianshu.com/p/1f814c6bb475
@@ -166,9 +166,11 @@ def get_solar_terms(start: datetime.date, end: datetime.date) -> (datetime.date,
     通式寿星公式：[Y×D+C]-L
     []里面取整数； Y=年数的后2位数； D=0.2422； L=Y/4，小寒、大寒、立春、雨水的 L=(Y-1)/4
 
+    :type start: datetime.date
     :param start: 开始日期
+    :type end: datetime.date
     :param end: 结束日期
-    :return: list[(datetime.date, str)]
+    :rtype: list[(datetime.date, str)]
     """
     if not 1900 <= start.year <= 2100 or not 1900 <= end.year <= 2100:
         raise NotImplementedError("only year between [1900, 2100] supported")
