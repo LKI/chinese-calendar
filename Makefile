@@ -2,8 +2,8 @@
 install:
 	pipenv sync --dev
 
-.PHONY: fix
-fix:
+.PHONY: fmt
+fmt:
 	PYTHONPATH=$$(pwd) python chinese_calendar/scripts/__init__.py
 	isort .
 	black -l 120 .
@@ -24,7 +24,7 @@ pytest:
 release:
 	rm -rf dist
 	python setup.py release
-	twine upload dist/*
+	twine upload -r pypi dist/*
 	sed -i 's/chinesecalendar/chinese_calendar/g' setup.py
 	python setup.py release
-	twine upload dist/*
+	twine upload -r pypi dist/*
