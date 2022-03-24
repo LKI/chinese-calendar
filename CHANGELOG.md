@@ -1,3 +1,9 @@
+## Latest Version 1.7.1
+> on 2022-03-24
+
+* **FIX**: 修复对 Python 2.7 的支持
+  - 注：虽然本库仍然支持 Python 2.7, 但建议您升级版本至 Python 3.6+, 下一个 major 版本将不在支持 Python 2.7
+
 ## Version 1.7.0
 > on 2022-03-22
 
