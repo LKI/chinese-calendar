@@ -657,3 +657,9 @@ class SolarTermTests(unittest.TestCase):
             (datetime.date(2023, 12, 22), "冬至"),
         ]
         self.assertEqual(expected, actual)
+
+        start = datetime.date(2023, 1, 6)
+        end = datetime.date(2023, 1, 19)
+        actual = chinese_calendar.get_solar_terms(start, end)
+        expected = []
+        self.assertEqual(expected, actual)
