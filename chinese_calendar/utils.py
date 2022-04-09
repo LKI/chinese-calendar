@@ -204,7 +204,10 @@ def get_solar_terms(start, end):
             delta = SOLAR_TERMS_DELTA.get((year, solar_term))
             if delta:
                 day += delta
-            result.append((datetime.date(year, month, day), solar_term.value[1]))
+            _date = datetime.date(year, month, day)
+            if _date < start or _date > end:
+                continue
+            result.append((_date, solar_term.value[1]))
         if month == 12:
             year, month = year + 1, 1
         else:
