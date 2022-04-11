@@ -1,3 +1,8 @@
+## Latest Version 1.7.2
+> on 2022-04-11
+
+* **FIX**: 修复二十四节气获取会出错的问题, thanks @yqkcn
+
 ## Latest Version 1.7.1
 > on 2022-03-24
 
