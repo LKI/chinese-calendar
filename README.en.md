@@ -14,6 +14,15 @@ Support 2004 ~ 2022.
 pip install chinesecalendar
 ```
 
+## Upgrade
+
+```
+pip install -U chinesecalendar
+```
+
+Chinese government announces holiday arrangement usually during November.
+This project will release new version after official announcement.
+
 ## Sample
 
 ``` python

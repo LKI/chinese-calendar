@@ -14,6 +14,16 @@
 pip install chinesecalendar
 ```
 
+## 升级
+
+```
+pip install -U chinesecalendar
+```
+
+由于次年的节假日安排，取决于国务院发布的日程。
+所以本项目一般会在国务院更新以后，发布新的版本。
+按照以往的经验，一般是每年的 11月 前后发布新版本。
+
 ## 样例
 
 ``` python
