@@ -66,6 +66,24 @@ class Arrangement(object):
                 pass
 
     # fmt: off
+    def _2023(self):
+        """ http://www.gov.cn/zhengce/content/2022-12/08/content_5730844.htm
+        一、元旦：2022年12月31日至2023年1月2日放假调休，共3天。
+        二、春节：1月21日至27日放假调休，共7天。1月28日（星期六）、1月29日（星期日）上班。
+        三、清明节：4月5日放假，共1天。
+        四、劳动节：4月29日至5月3日放假调休，共5天。4月23日（星期日）、5月6日（星期六）上班。
+        五、端午节：6月22日至24日放假调休，共3天。6月25日（星期日）上班。
+        六、中秋节、国庆节：9月29日至10月6日放假调休，共8天。10月7日（星期六）、10月8日（星期日）上班。
+        """
+        self.year_at(2023) \
+            .nyd().rest(1, 1).to(1, 2) \
+            .sf().rest(1, 21).to(1, 27).work(1, 28).to(1, 29).in_lieu(1, 26).to(1, 27) \
+            .tsd().rest(4, 5) \
+            .ld().rest(4, 29).to(5, 3).work(4, 23).work(5, 6).in_lieu(5, 2).to(5, 3) \
+            .dbf().rest(6, 22).to(6, 24).work(6, 25).in_lieu(6, 23) \
+            .maf().rest(9, 29) \
+            .nd().rest(9, 30).to(10, 6).work(10, 7).to(10, 8).in_lieu(10, 5).to(10, 6)
+
     def _2022(self):
         """ http://www.gov.cn/zhengce/content/2021-10/25/content_5644835.htm
         一、元旦：2022年1月1日至3日放假，共3天。
@@ -83,7 +101,8 @@ class Arrangement(object):
             .ld().rest(4, 30).to(5, 4).work(4, 24).work(5, 7).in_lieu(5, 3).to(5, 4) \
             .dbf().rest(6, 3).to(6, 5) \
             .maf().rest(9, 10).to(9, 12) \
-            .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9).in_lieu(10, 6).to(10, 7)
+            .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9).in_lieu(10, 6).to(10, 7) \
+            .nyd().rest(12, 31)
 
     def _2021(self):
         """ http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm
