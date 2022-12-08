@@ -14,7 +14,7 @@ from .utils import (
     is_workday,
 )
 
-__version__ = "1.7.2"
+__version__ = "1.8.0"
 __all__ = [
     "Holiday",
     "holidays",
