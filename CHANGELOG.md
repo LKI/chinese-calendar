@@ -1,3 +1,8 @@
+## Latest Version 1.8.0
+> on 2022-12-09
+
+* **FEAT**: 支持 2023年 的节假日
+
 ## Latest Version 1.7.2
 > on 2022-04-11
 
