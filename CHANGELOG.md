@@ -1,14 +1,20 @@
+## Draft Version 1.9.0
+> WIP
+
+* **FEAT**: 支持 Python3.11
+* **CHORE**: 更新项目开发依赖
+
 ## Latest Version 1.8.0
 > on 2022-12-09
 
 * **FEAT**: 支持 2023年 的节假日
 
-## Latest Version 1.7.2
+## Version 1.7.2
 > on 2022-04-11
 
 * **FIX**: 修复二十四节气获取会出错的问题, thanks @yqkcn
 
-## Latest Version 1.7.1
+## Version 1.7.1
 > on 2022-03-24
 
 * **FIX**: 修复对 Python 2.7 的支持

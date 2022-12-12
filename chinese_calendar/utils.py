@@ -4,7 +4,12 @@ from __future__ import absolute_import, unicode_literals
 import datetime
 
 from chinese_calendar.constants import holidays, in_lieu_days, workdays
-from chinese_calendar.solar_terms import SOLAR_TERMS_C_NUMS, SOLAR_TERMS_DELTA, SOLAR_TERMS_MONTH, SolarTerms
+from chinese_calendar.solar_terms import (
+    SOLAR_TERMS_C_NUMS,
+    SOLAR_TERMS_DELTA,
+    SOLAR_TERMS_MONTH,
+    SolarTerms,
+)
 
 
 def _wrap_date(date):

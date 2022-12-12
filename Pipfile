@@ -6,7 +6,7 @@ verify_ssl = true
 [packages]
 
 [dev-packages]
-black = {version = "==21.9b0", markers = "python_version == '3.9'"}
-flake8 = ">=3.8.2"
-isort = {version = ">=4.3.21", extras = ["pipfile"], markers = "python_version == '3.9'"}
+black = ">=22.12.0"
+flake8 = "==5.0.4"  # Pending for Python 3.7
+isort = ">=5.10.1"
 pytest-cov = ">=2.9.0"
