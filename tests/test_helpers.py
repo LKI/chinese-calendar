@@ -25,16 +25,25 @@ class HelperTests(unittest.TestCase):
 
     def test_get_workdays_holidays(self):
         cases = [
-            ((2018, 2, 1), (2018, 1, 1), 0, 0, 0),
-            ((2018, 1, 1), (2018, 1, 1), 1, 1, 0),
-            ((2018, 1, 1), (2018, 1, 7), 3, 1, 4),
-            ((2018, 1, 1), (2018, 2, 1), 9, 1, 23),
+            ((2018, 2, 1), (2018, 1, 1), 0, 0, 0, 0),
+            ((2018, 1, 1), (2018, 1, 1), 1, 1, 0, 0),
+            ((2018, 1, 1), (2018, 1, 7), 3, 1, 4, 4),
+            ((2018, 1, 1), (2018, 2, 1), 9, 1, 23, 23),
+            ((2018, 2, 1), (2018, 3, 1), 11, 7, 18, 16),
         ]
-        for start, end, include_weekends, exclude_weekends, workdays in cases:
+        for (start, end, include_weekends, exclude_weekends, workdays,
+             workdays_exclude_weekends) in cases:
             start, end = datetime.date(*start), datetime.date(*end)
             self.assertEqual(include_weekends, len(chinese_calendar.get_holidays(start, end)))
-            self.assertEqual(exclude_weekends, len(chinese_calendar.get_holidays(start, end, include_weekends=False)))
+            self.assertEqual(
+                exclude_weekends,
+                len(chinese_calendar.get_holidays(start, end, include_weekends=False))
+            )
             self.assertEqual(workdays, len(chinese_calendar.get_workdays(start, end)))
+            self.assertEqual(
+                workdays_exclude_weekends,
+                len(chinese_calendar.get_workdays(start, end, include_weekends=False))
+            )
 
     def test_find_workday(self):
         dates = [
