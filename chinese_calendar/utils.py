@@ -129,16 +129,20 @@ def get_holidays(start, end, include_weekends=True):
     return list(filter(lambda x: x in holidays, get_dates(start, end)))
 
 
-def get_workdays(start, end):
+def get_workdays(start, end, include_weekends=True):
     """
     get workdays between start date and end date. (includes start date and end date)
 
     :type start: datetime.date | datetime.datetime
     :type end:  datetime.date | datetime.datetime
+    :type include_weekends: bool
+    :param include_weekends: False for excluding Saturdays and Sundays
     :rtype: list[datetime.date]
     """
     start, end = _validate_date(start, end)
-    return list(filter(is_workday, get_dates(start, end)))
+    if include_weekends:
+        return list(filter(is_workday, get_dates(start, end)))
+    return list(filter(lambda x: is_workday(x) and x.weekday() < 5, get_dates(start, end)))
 
 
 def find_workday(delta_days=0, date=None):
