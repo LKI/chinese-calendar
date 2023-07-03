@@ -1,7 +1,8 @@
-## Draft Version 1.9.0
-> WIP
+## Version 1.8.1
+> on 2023-07-03
 
 * **FEAT**: 支持 Python3.11
+* **FEAT**: `get_workdays` 函数新增 `include_weekends` 筛选，该筛选关闭后会过滤掉调休的周末，thanks @Dragon-GCS #104
 * **CHORE**: 更新项目开发依赖
 
 ## Latest Version 1.8.0
