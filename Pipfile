@@ -7,6 +7,6 @@ verify_ssl = true
 
 [dev-packages]
 black = ">=22.12.0"
-flake8 = "==5.0.4"  # Pending for Python 3.7
+flake8 = ">=5.0.4"
 isort = ">=5.10.1"
 pytest-cov = ">=2.9.0"

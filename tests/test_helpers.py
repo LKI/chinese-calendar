@@ -31,7 +31,7 @@ class HelperTests(unittest.TestCase):
             ((2018, 1, 1), (2018, 2, 1), 9, 1, 23, 23),
             ((2018, 2, 1), (2018, 3, 1), 11, 7, 18, 16),
         ]
-        for (start, end, include_weekends, exclude_weekends, workdays, workdays_exclude_weekends) in cases:
+        for start, end, include_weekends, exclude_weekends, workdays, workdays_exclude_weekends in cases:
             start, end = datetime.date(*start), datetime.date(*end)
             self.assertEqual(include_weekends, len(chinese_calendar.get_holidays(start, end)))
             self.assertEqual(exclude_weekends, len(chinese_calendar.get_holidays(start, end, include_weekends=False)))
