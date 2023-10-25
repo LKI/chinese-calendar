@@ -1,3 +1,8 @@
+## Latest Version 1.9.0
+> on 2023-10-25
+
+* **FEAT**: 支持 2024年 的节假日
+
 ## Version 1.8.1
 > on 2023-07-03
 
@@ -5,7 +10,7 @@
 * **FEAT**: `get_workdays` 函数新增 `include_weekends` 筛选，该筛选关闭后会过滤掉调休的周末，thanks @Dragon-GCS #104
 * **CHORE**: 更新项目开发依赖
 
-## Latest Version 1.8.0
+## Version 1.8.0
 > on 2022-12-09
 
 * **FEAT**: 支持 2023年 的节假日
