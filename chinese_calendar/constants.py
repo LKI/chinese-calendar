@@ -868,7 +868,7 @@ in_lieu_days = {
     datetime.date(year=2024, month=4, day=5): Holiday.tomb_sweeping_day.value,
     datetime.date(year=2024, month=5, day=2): Holiday.labour_day.value,
     datetime.date(year=2024, month=5, day=3): Holiday.labour_day.value,
-    datetime.date(year=2024, month=9, day=17): Holiday.mid_autumn_festival.value,
+    datetime.date(year=2024, month=9, day=16): Holiday.mid_autumn_festival.value,
     datetime.date(year=2024, month=10, day=4): Holiday.national_day.value,
     datetime.date(year=2024, month=10, day=7): Holiday.national_day.value,
 }

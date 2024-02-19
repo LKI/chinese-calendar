@@ -82,7 +82,7 @@ class Arrangement(object):
             .tsd().rest(4, 4).to(4, 6).work(4, 7).in_lieu(4, 5) \
             .ld().rest(5, 1).to(5, 5).work(4, 28).work(5, 11).in_lieu(5, 2).to(5, 3) \
             .dbf().rest(6, 10) \
-            .maf().rest(9, 15).to(9, 17).work(9, 14).in_lieu(9, 17) \
+            .maf().rest(9, 15).to(9, 17).work(9, 14).in_lieu(9, 16) \
             .nd().rest(10, 1).to(10, 7).work(9, 29).work(10, 12).in_lieu(10, 4).in_lieu(10, 7)
 
     def _2023(self):
