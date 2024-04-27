@@ -62,3 +62,7 @@ assert chinese_calendar.is_in_lieu(datetime.date(2006, 2, 2)) is True
 [constants.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/constants.py
 [scripts/data.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/data.py
 [scripts/__init__.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/__init__.py
+
+
+# install from source codes
+pip install .
