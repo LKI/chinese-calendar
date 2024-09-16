@@ -1,4 +1,9 @@
-## Latest Version 1.9.1
+## Latest Version 1.9.2
+> on 2024-09-16
+
+* **FIX**: 修正 2025年 元旦调休标记不正确的问题，thanks @Andrea-Chenjia-Pan
+
+## Version 1.9.1
 > on 2024-02-19
 
 * **FIX**: 修正 2024年 中秋调休标记不正确的问题，thanks @xiaomingtt
