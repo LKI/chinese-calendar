@@ -101,7 +101,8 @@ class Arrangement(object):
             .ld().rest(4, 29).to(5, 3).work(4, 23).work(5, 6).in_lieu(5, 2).to(5, 3) \
             .dbf().rest(6, 22).to(6, 24).work(6, 25).in_lieu(6, 23) \
             .maf().rest(9, 29) \
-            .nd().rest(9, 30).to(10, 6).work(10, 7).to(10, 8).in_lieu(10, 5).to(10, 6)
+            .nd().rest(9, 30).to(10, 6).work(10, 7).to(10, 8).in_lieu(10, 5).to(10, 6)\
+            .nyd().rest(12, 30).to(12, 31)
 
     def _2022(self):
         """ http://www.gov.cn/zhengce/content/2021-10/25/content_5644835.htm
