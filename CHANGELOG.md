@@ -1,4 +1,9 @@
-## Latest Version 1.9.2
+## Latest Version 1.10.0
+> on 2025-11-13
+
+* **FEAT**: 支持 2025年 的节假日
+
+## Version 1.9.2
 > on 2024-09-16
 
 * **FIX**: 修正 2025年 元旦调休标记不正确的问题，thanks @Andrea-Chenjia-Pan
