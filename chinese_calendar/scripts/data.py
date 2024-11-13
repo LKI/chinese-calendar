@@ -66,6 +66,24 @@ class Arrangement(object):
                 pass
 
     # fmt: off
+    def _2025(self):
+        """https://www.gov.cn/zhengce/content/202411/content_6986382.htm
+        一、元旦：1月1日（周三）放假1天，不调休。
+        二、春节：1月28日（农历除夕、周二）至2月4日（农历正月初七、周二）放假调休，共8天。1月26日（周日）、2月8日（周六）上班。
+        三、清明节：4月4日（周五）至6日（周日）放假，共3天。
+        四、劳动节：5月1日（周四）至5日（周一）放假调休，共5天。4月27日（周日）上班。
+        五、端午节：5月31日（周六）至6月2日（周一）放假，共3天。
+        六、国庆节、中秋节：10月1日（周三）至8日（周三）放假调休，共8天。9月28日（周日）、10月11日（周六）上班。
+        """
+        self.year_at(2025) \
+            .nyd().rest(1, 1) \
+            .sf().rest(1, 28).to(2, 4).work(1, 26).work(2, 8).in_lieu(2, 3).to(2, 4) \
+            .tsd().rest(4, 4).to(4, 6) \
+            .ld().rest(5, 1).to(5, 5).work(4, 27).in_lieu(5, 5) \
+            .dbf().rest(5, 31).to(6, 2) \
+            .nd().rest(10, 1).to(10, 8).work(9, 28).work(10, 11).in_lieu(10, 7).to(10, 8) \
+            .maf().rest(10, 6)
+
     def _2024(self):
         """https://www.gov.cn/zhengce/content/202310/content_6911527.htm
         一、元旦：1月1日放假，与周末连休。
@@ -101,7 +119,7 @@ class Arrangement(object):
             .ld().rest(4, 29).to(5, 3).work(4, 23).work(5, 6).in_lieu(5, 2).to(5, 3) \
             .dbf().rest(6, 22).to(6, 24).work(6, 25).in_lieu(6, 23) \
             .maf().rest(9, 29) \
-            .nd().rest(9, 30).to(10, 6).work(10, 7).to(10, 8).in_lieu(10, 5).to(10, 6)\
+            .nd().rest(9, 30).to(10, 6).work(10, 7).to(10, 8).in_lieu(10, 5).to(10, 6) \
             .nyd().rest(12, 30).to(12, 31)
 
     def _2022(self):
