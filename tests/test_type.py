@@ -24,3 +24,6 @@ class TypeTests(unittest.TestCase):
         with self.assertRaises(NotImplementedError):
             # noinspection PyTypeChecker
             chinese_calendar.is_holiday(date)  # NOQA
+
+if __name__ == '__main__':
+    unittest.main()
