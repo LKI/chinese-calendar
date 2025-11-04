@@ -5,26 +5,26 @@ install:
 .PHONY: fmt
 fmt:
 	PYTHONPATH=$$(pwd) python chinese_calendar/scripts/__init__.py
-	isort .
-	black -l 120 .
+	pipenv run isort .
+	pipenv run black -l 120 .
 
 .PHONY: test
 test:
-	flake8
-	isort --check .
-	black --check -l 120 .
+	pipenv run flake8
+	pipenv run isort --check .
+	pipenv run black --check -l 120 .
 	$(Make) pytest
 
 .PHONY: pytest
 pytest:
-	pytest
+	pipenv run pytest
 
 
 .PHONY: release
 release:
+	pipenv run pip install twine wheel
 	rm -rf dist
-	python setup.py release
-	twine upload -r pypi dist/*
+	pipenv run python setup.py release
 	sed -i 's/chinesecalendar/chinese_calendar/g' setup.py
-	python setup.py release
-	twine upload -r pypi dist/*
+	pipenv run python setup.py release
+	pipenv run twine upload -r pypi dist/*

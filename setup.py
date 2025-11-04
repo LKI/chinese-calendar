@@ -16,6 +16,7 @@ setup(
     author_email="liriansu@gmail.com",
     url="https://github.com/LKI/chinese-calendar",
     license="MIT License",
+    license_files=[],
     packages=["chinese_calendar"],
     install_requires=[],
     classifiers=[
