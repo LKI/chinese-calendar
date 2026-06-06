@@ -14,7 +14,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Lirian Su",
     author_email="liriansu@gmail.com",
-    url="https://github.com/LKI/chinese-calendar",
+    url="https://github.com/liriansu-opus/chinese-calendar",
     license="MIT License",
     license_files=[],
     packages=["chinese_calendar"],

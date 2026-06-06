@@ -1,8 +1,8 @@
 # 中国节假日
 
 [![Package](https://img.shields.io/pypi/v/chinesecalendar.svg)](https://pypi.python.org/pypi/chinesecalendar)
-[![License](https://img.shields.io/github/license/LKI/chinese-calendar.svg)](https://github.com/LKI/chinese-calendar/blob/master/LICENSE)
-[![README](https://img.shields.io/badge/README-English-brightgreen.svg)](https://github.com/LKI/chinese-calendar/blob/master/README.en.md)
+[![License](https://img.shields.io/github/license/liriansu-opus/chinese-calendar.svg)](https://github.com/liriansu-opus/chinese-calendar/blob/master/LICENSE)
+[![README](https://img.shields.io/badge/README-English-brightgreen.svg)](https://github.com/liriansu-opus/chinese-calendar/blob/master/README.en.md)
 
 判断某年某月某一天是不是工作日/节假日。
 支持 2004年 至 2026年，包括 2020年 的春节延长。
@@ -58,6 +58,6 @@ assert chinese_calendar.is_in_lieu(datetime.date(2006, 2, 2)) is True
 3. 执行[脚本][scripts/__init__.py]自动生成[常量文件][constants.py]
 4. 提交PR
 
-[constants.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/constants.py
-[scripts/data.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/data.py
-[scripts/__init__.py]: https://github.com/LKI/chinese-calendar/blob/master/chinese_calendar/scripts/__init__.py
+[constants.py]: https://github.com/liriansu-opus/chinese-calendar/blob/master/chinese_calendar/constants.py
+[scripts/data.py]: https://github.com/liriansu-opus/chinese-calendar/blob/master/chinese_calendar/scripts/data.py
+[scripts/__init__.py]: https://github.com/liriansu-opus/chinese-calendar/blob/master/chinese_calendar/scripts/__init__.py
