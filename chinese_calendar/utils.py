@@ -11,6 +11,8 @@ from chinese_calendar.solar_terms import (
     SolarTerms,
 )
 
+from typing_extensions import List, Tuple, Union
+
 
 def _wrap_date(date):
     """
@@ -24,7 +26,7 @@ def _wrap_date(date):
     return date
 
 
-def _validate_date(*dates):
+def _validate_date(*dates : Union[datetime.date, datetime.datetime]) -> Union[datetime.date, List[datetime.date]]:
     """
     check if the date(s) is supported
 
@@ -55,7 +57,7 @@ def is_holiday(date):
     return not is_workday(date)
 
 
-def is_workday(date):
+def is_workday(date: Union[datetime.date, datetime.datetime]) -> bool:
     """
     check if one date is workday in China.
     in other words, Chinese people works at that day.
@@ -82,7 +84,7 @@ def is_in_lieu(date):
     return date in in_lieu_days
 
 
-def get_holiday_detail(date):
+def get_holiday_detail(date : Union[datetime.date, datetime.datetime], in_english: bool = True) -> Tuple[bool, Union[str, None]]:
     """
     check if one date is holiday in China,
     and return the holiday name (None if it's a normal day)
@@ -93,9 +95,18 @@ def get_holiday_detail(date):
     """
     date = _validate_date(date)
     if date in workdays.keys():
-        return False, workdays[date]
+
+        # decide the language
+        if in_english:
+            return False, workdays[date][0]
+        else:
+            return False, workdays[date][1]
+    
     elif date in holidays.keys():
-        return True, holidays[date]
+        if in_english:
+            return True, holidays[date][0]
+        else:
+            return True, holidays[date][1]
     else:
         return date.weekday() > 4, None
 
